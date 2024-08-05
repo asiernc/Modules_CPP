@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = Megaphone
 
-SRC = 	megaphone.cpp
+SRC = 	Megaphone.cpp
 OBJ =	$(SRC:.cpp=.o)
 CC =	g++
 RM =	rm -f
