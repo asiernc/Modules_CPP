@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/05 20:37:05 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/05 20:37:06 by anovio-c         ###   ########.fr        #
+#    Created: 2024/08/05 19:29:06 by anovio-c          #+#    #+#              #
+#    Updated: 2024/08/05 21:14:01 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Megaphone
+NAME = dontknow
 
-SRC = 	Megaphone.cpp
+
+SRC = 	tests.cpp Acount.cpp
 OBJ =	$(SRC:.cpp=.o)
 CC =	g++
 RM =	rm -f
