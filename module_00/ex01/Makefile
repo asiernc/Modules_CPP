@@ -6,14 +6,14 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:29:06 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/05 19:29:07 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/07 16:00:04 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = DustyDiary
 
 
-SRC = 	main.cpp Phonebook.cpp Phonebook_utils.cpp Contact.cpp
+SRC = 	main.cpp Phonebook.cpp PhonebookUtils.cpp Contact.cpp
 OBJ =	$(SRC:.cpp=.o)
 CC =	g++
 RM =	rm -f

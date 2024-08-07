@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:21 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:42 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/07 16:04:03 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,10 @@ void	Phonebook::search(void) {
 		return ;
 	}
 	while (!std::cin.eof()) {
-		std::cout << "Enter a index to search: " << std::endl;
+		std::cout << "Enter a index to search (0 to come back): " << std::endl;
 		if (std::getline(std::cin, str) && str != "") {
+			if (str[0] == '0')
+				return ;
 			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8'
 				&& this->_contacts[str[0] - 1 - '0'].get_fname().size())
 				break ;
