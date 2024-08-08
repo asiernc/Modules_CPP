@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:29:06 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/05 21:14:01 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/08 16:52:20 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = dontknow
 
 
-SRC = 	tests.cpp Acount.cpp
+SRC = 	tests.cpp Account.cpp
 OBJ =	$(SRC:.cpp=.o)
 CC =	g++
 RM =	rm -f
