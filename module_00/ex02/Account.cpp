@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 21:15:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/08 17:30:08 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/09 17:28:03 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
-
 
 int	Account::getNbAccounts(void) {
 	return (Account::_nbAccounts);
@@ -52,7 +51,7 @@ void	Account::displayAccountsInfos(void) {
 	_displayTimestamp();
 	std::cout << "accounts:" << Account::getNbAccounts()
 		<< ";total:" << Account::getTotalAmount()
-		<< ";deposits:" << Account::getNbAccounts()
+		<< ";deposits:" << Account::getNbDeposits()
 		<< ";withdrawals:" << Account::getNbWithdrawals()
 		<< std::endl;
 }
@@ -100,7 +99,6 @@ void	Account::makeDeposit(int deposit) {
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
-	//throw
 	_displayTimestamp();
 	std::cout << "index;" << _accountIndex
 		<< "p_amount:" << _amount;
