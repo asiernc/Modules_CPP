@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:08 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:09 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 14:57:00 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@ Contact::Contact(void){
 Contact::~Contact(void){
 }
 
-std::string	Contact::get_fname(void) {
+std::string	Contact::getFname(void) {
 	return (this->fname);
 }
 
-std::string Contact::get_lname(void) {
+std::string Contact::getLname(void) {
 	return (this->lname);
 }
 
-std::string Contact::get_nickname(void) {
+std::string Contact::getNickname(void) {
 	return (this->nickname);
 }
 
-std::string Contact::get_phoneNumber(void) {
+std::string Contact::getPhoneNumber(void) {
 	return (this->phonenum);
 }
 
-std::string Contact::get_darkestSecret(void) {
+std::string Contact::getDarkestSecret(void) {
 	return (this->secret);
 }
 
-bool Contact::only_spaces(std::string str) {
+bool Contact::onlySpaces(std::string str) {
 	for (int i = 0; str[i]; i++) {
 		if (!std::isspace(str[i]))
 			return (false);
@@ -46,28 +46,28 @@ bool Contact::only_spaces(std::string str) {
 	return (true);
 }
 
-bool	Contact::set_fname(std::string str){
-	if (only_spaces(str))
+bool	Contact::setFname(std::string str){
+	if (onlySpaces(str))
 		return (false);
 	this->fname = str;
 	return (true);
 }
 
-bool	Contact::set_lname(std::string str) {
-	if (only_spaces(str))
+bool	Contact::setLname(std::string str) {
+	if (onlySpaces(str))
 		return (false);
 	this->lname = str;
 	return (true);
 }
 
-bool	Contact::set_nickname(std::string str) {
-	if (only_spaces(str))
+bool	Contact::setNickname(std::string str) {
+	if (onlySpaces(str))
 		return (false);
 	this->nickname = str;
 	return (true);
 }
 
-bool	Contact::set_phoneNumber(std::string str) {
+bool	Contact::setPhoneNumber(std::string str) {
 	for (int i = 0; i < str[i]; i++)
 	{
 		if (i == '+' && i != 0)
@@ -79,8 +79,8 @@ bool	Contact::set_phoneNumber(std::string str) {
 	return (true);
 }
 
-bool	Contact::set_darkestSecret(std::string str) {
-	if (only_spaces(str))
+bool	Contact::setDarkestSecret(std::string str) {
+	if (onlySpaces(str))
 		return (false);
 	this->secret = str;
 	return (true);

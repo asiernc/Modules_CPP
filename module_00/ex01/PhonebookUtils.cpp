@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhonebookUtils.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:55 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:56 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:22:48 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ int	display_contacts(Contact contact[8]) {
 	i = '0';
 	counter = 0;
 	while (++i <= '8') {
-		if (contact[i - 1 - '0'].get_fname().size()) {
+		if (contact[i - 1 - '0'].getFname().size()) {
 			if (i == '1')
 				display_header();
 			str = i;
 			str = parse_line(str);
 			std::cout << "|" << str;
-			str = parse_line(contact[i - 1 - '0'].get_fname());
+			str = parse_line(contact[i - 1 - '0'].getFname());
 			std::cout << "|" << str;
-			str = parse_line(contact[i - 1 - '0'].get_lname());
+			str = parse_line(contact[i - 1 - '0'].getLname());
 			std::cout << "|" << str;
-			str = parse_line(contact[i - 1 - '0'].get_nickname());
+			str = parse_line(contact[i - 1 - '0'].getNickname());
 			std::cout << "|" << str << "|" << std::endl;
 			counter++;
 		}

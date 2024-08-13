@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:36 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:37 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 15:04:41 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Phonebook
 		~Phonebook(void);
 		void 	add(void);
 		void 	search(void);
-		void	show_help(void);
+		void	showHelp(void);
 		void 	print(Contact Contact);
 		void	print_contact(Contact contact);
 

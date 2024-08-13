@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:49 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:50 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 15:04:41 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 		std::cout << "Enter a command >" << std::endl;
 		std::getline(std::cin, str);
 		if (str == "-h")
-			phonebook.show_help();
+			phonebook.showHelp();
 		if (str == "ADD")
 			phonebook.add();
 		else if (str == "SEARCH")

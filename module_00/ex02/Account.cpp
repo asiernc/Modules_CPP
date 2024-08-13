@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 21:15:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/09 17:28:03 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:23:53 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,6 @@ bool	Account::makeWithdrawal(int withdrawal) {
 		<< std::endl;
 	return (true);
 }
-
-/*int	Account::checkAmount(void) const {
-	
-}*/
 
 void	Account::displayStatus(void) const {
 	_displayTimestamp();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:15 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/05 19:28:16 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/12 15:03:03 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ private:
 public:
 	Contact(void);
 	~Contact(void);
-	static bool	only_spaces(std::string str);
+	static bool		onlySpaces(std::string str);
 
 	// Getters and setters
-	std::string		get_fname(void);
-	std::string		get_lname(void);
-	std::string		get_nickname(void);
-	std::string		get_phoneNumber(void);
-	std::string		get_darkestSecret(void);
-	bool			set_fname(std::string str);
-	bool			set_lname(std::string str);
-	bool			set_nickname(std::string str);
-	bool			set_phoneNumber(std::string str);
-	bool			set_darkestSecret(std::string str);
+	std::string		getFname(void);
+	std::string		getLname(void);
+	std::string		getNickname(void);
+	std::string		getPhoneNumber(void);
+	std::string		getDarkestSecret(void);
+	bool			setFname(std::string str);
+	bool			setLname(std::string str);
+	bool			setNickname(std::string str);
+	bool			setPhoneNumber(std::string str);
+	bool			setDarkestSecret(std::string str);
 };
 #endif
