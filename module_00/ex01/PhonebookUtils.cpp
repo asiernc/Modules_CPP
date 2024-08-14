@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   PhonebookUtils.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:55 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/12 16:22:48 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/13 21:22:37 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhonebookUtils.hpp"
+
+bool	onlySpaces(std::string str) {
+	for (int i = 0; str[i]; i++) {
+		if (!std::isspace(str[i]))
+			return (false);
+	};
+	return (true);
+}
+
+bool	checkPhoneNumber(std::string str) {
+	for (int i = 0; i < str[i]; i++)
+	{
+		if (i == '+' && i != 0)
+			return (false);
+		if (!std::isdigit(str[i]) && str[i] != '+')
+			return (false);
+	}
+	return (true);
+}
 
 std::string		parse_line(std::string str) {
 	if (str.size() > MAX_CHARACTERS) {
@@ -28,7 +47,7 @@ void	display_header(void) {
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 }
 
-int	display_contacts(Contact contact[8]) {
+int	display_contacts(Contact contact[MAX_CONTACTS]) {
 	std::string	str;
 	char		i;
 	int			counter;
@@ -36,21 +55,22 @@ int	display_contacts(Contact contact[8]) {
 	i = '0';
 	counter = 0;
 	while (++i <= '8') {
-		if (contact[i - 1 - '0'].getFname().size()) {
+		if (contact[i - 1 - '0'].getFirstName().size()) {
 			if (i == '1')
 				display_header();
 			str = i;
 			str = parse_line(str);
 			std::cout << "|" << str;
-			str = parse_line(contact[i - 1 - '0'].getFname());
+			str = parse_line(contact[i - 1 - '0'].getFirstName());
 			std::cout << "|" << str;
-			str = parse_line(contact[i - 1 - '0'].getLname());
+			str = parse_line(contact[i - 1 - '0'].getLastName());
 			std::cout << "|" << str;
 			str = parse_line(contact[i - 1 - '0'].getNickname());
 			std::cout << "|" << str << "|" << std::endl;
 			counter++;
 		}
 	}
-	std::cout << "|-------------------------------------------|" << std::endl;
+	if (counter != 0)
+		std::cout << "|-------------------------------------------|" << std::endl;
 	return (counter);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:29:06 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/12 15:12:15 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/13 20:24:05 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 all:	$(NAME)
 
-%.o : %.cpp Makefile
+%.o : %.cpp Makefile $(HEADERS)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJ) 
