@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\fmodern\fcharset0 Courier-Bold;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12660\viewh16980\viewkind0
+\deftab720
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b\fs32 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Siempre tiene referencia de una clase (\'91&\'92) porque si no se crear\'eda una shallow copy dentro de esa funcion.\
+\
+\'bfPor qu\'e9 debes inicializar 
+\f1\fs34 _weapon
+\f0\fs32  en la lista de inicializaci\'f3n?\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Referencias
+\f2\b0 : 
+\f3\fs34 _weapon
+\f2\fs32  es una referencia (es decir, 
+\f3\fs34 Weapon&
+\f2\fs32 ). Las referencias en C++ 
+\f0\b deben
+\f2\b0  ser inicializadas en la lista de inicializaci\'f3n porque no pueden ser reasignadas despu\'e9s de la construcci\'f3n. Una referencia debe apuntar a un objeto v\'e1lido en el momento en que se crea. Por lo tanto, es obligatorio que las referencias sean inicializadas en la lista de inicializaci\'f3n.\
+\ls1\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Constantes
+\f2\b0 : Si 
+\f3\fs34 _weapon
+\f2\fs32  fuera 
+\f3\fs34 const
+\f2\fs32 , tambi\'e9n tendr\'eda que ser inicializado en la lista de inicializaci\'f3n por una raz\'f3n similar: una constante debe ser inicializada al momento de su creaci\'f3n y no puede cambiar despu\'e9s.\
+\ls1\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Eficiencia
+\f2\b0 : Incluso para tipos normales (no referencias ni constantes), inicializar en la lista de inicializaci\'f3n es m\'e1s eficiente porque evita la construcci\'f3n y luego la asignaci\'f3n. Por ejemplo, si 
+\f3\fs34 _name
+\f2\fs32  fuera un tipo complejo, como 
+\f3\fs34 std::string
+\f2\fs32 , al inicializarlo en la lista de inicializaci\'f3n, se crear\'eda directamente con el valor proporcionado. Si lo inicializas dentro del cuerpo del constructor, primero se crea un 
+\f3\fs34 std::string
+\f2\fs32  vac\'edo (constructor por defecto) y luego se asigna un nuevo valor, lo que resulta en una operaci\'f3n adicional.\
+}

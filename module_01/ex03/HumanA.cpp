@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 20:47:49 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/10 21:18:55 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/14 21:18:41 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 // inicializados en la lista de inicialización porque no pueden ser asignados
 // después de que el objeto ha sido creado.
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon) {
-	std::cout << "Constructor of Player A" << std::endl;
-	this->_name = name;
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon), _name(name) {
+	std::cout << "Human A: " << _name << " created and setted weapon: " << weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA() {
@@ -30,7 +29,7 @@ HumanA::~HumanA() {
 
 void	HumanA::attack(void) {
 	std::cout << this->_name 
-		<< "attacks with their "
+		<< " attacks with their "
 		<< this->_weapon.getType()
 		<< std::endl;
 }
