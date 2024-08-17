@@ -1,5 +1,3 @@
-/*.o
-.DS_Store
-.vscode
-DustyDiary
-Megaphone
+*.o
+*.DS_Store
+*.vscode

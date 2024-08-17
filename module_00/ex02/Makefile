@@ -6,11 +6,11 @@
 #    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 19:29:06 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/12 16:25:11 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/17 16:10:51 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = dontknow
+NAME = globalBankters
 
 HEADERS = Account.hpp
 SRC = 	tests.cpp Account.cpp

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:28:21 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/14 19:46:18 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/17 16:21:56 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,13 +202,14 @@ void	Phonebook::search(void) {
 					std::cout << "Searching contact information..." << std::endl;
 					break ;
 				}
+			if (str[0] < '1' || str[0] > '8')
+				std::cout << "Invalid index." << std::endl;
 		}
 		if (str == "")
 			std::cout << "Invalid index." << std::endl;
 	}
-	if (!std::cin.eof() && this->_contacts[str[0] - 1 - '0'].getFirstName().size()) {
+	if (!std::cin.eof() && this->_contacts[str[0] - 1 - '0'].getFirstName().size())
 		this->print_contact(this->_contacts[str[0] - 1 - '0']);
-	}
 	else
 		std::cout << "Contact number " << str[0] - '0' << " doesn't exists yet." << std::endl;
 }
