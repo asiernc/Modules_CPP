@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/10 12:45:47 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/10 19:29:50 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/16 20:36:42 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all: $(NAME)
+
+%.o : %.cpp Makefile
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)

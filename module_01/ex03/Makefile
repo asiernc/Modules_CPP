@@ -6,12 +6,13 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/10 12:45:47 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/10 21:22:12 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/16 20:37:19 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = weapons
 
+HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
 SRC = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
@@ -19,6 +20,9 @@ RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all: $(NAME)
+
+%.o : %.cpp Makefile $(HEADERS)
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
