@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:57:09 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 10:17:17 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/10 20:47:17 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/08/10 21:22:26 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include "Animal.hpp"
+# include "Weapon.hpp"
+# include <iostream>
 
-class Dog : public Animal {
-	private:
-
-	public:	
-		Dog(void);
-		Dog(const Dog &src);
-		Dog &operator=(const Dog &src);
-		~Dog(void);
-
-		std::string	getType(void);
-		void	makeSound(void) const;
+class HumanB
+{
+private:
+	Weapon		*_weapon;
+	std::string	_name;
+public:
+	HumanB(std::string);
+	void	attack(void);
+	void	setWeapon(Weapon &weapon);
+	~HumanB();
 };
 
 #endif

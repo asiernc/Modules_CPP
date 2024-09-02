@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 10:01:59 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/09 20:28:21 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/02 14:20:56 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
+# include <string>
+# include <stdbool.h>
 
-class Animal {
-	protected:
-		std::string _type;
-
+class Zombie {
 	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		Animal &operator=(const Animal &src);
-		virtual ~Animal(void);
+		Zombie();
+		void	setName(std::string name);
+		void	announce(void);
+		static	Zombie	*newZombie(std::string name);
+		void	randomChump(std::string name);
+		~Zombie();
+	private:
+		std::string	_name;
 
-		std::string	getType(void) const;
-		virtual void		makeSound(void) const;
 };
 
 #endif

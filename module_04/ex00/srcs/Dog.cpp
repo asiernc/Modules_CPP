@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:32:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/01 21:47:35 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:15:14 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 Dog::Dog() : Animal() {
 	std::cout << "Dog default constructor called" << std::endl;
-	this->_type = "Dog";
+	//this->_type = "Dog";
 }
 
-Dog::Dog(const Dog &src) : Animal() {
+Dog::Dog(const Dog &src) : Animal("Dog") {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = src;
 }

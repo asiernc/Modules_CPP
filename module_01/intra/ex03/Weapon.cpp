@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 10:01:59 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/10 20:17:32 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/02 11:53:22 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Weapon.hpp"
 
-# include <iostream>
+Weapon::Weapon(std::string type) {
+	this->setType(type);
+	std::cout << "Weapon is created and setted with: " << _type << std::endl;
+}
 
-class Animal {
-	protected:
-		std::string _type;
+Weapon::~Weapon() {
+	std::cout << "Destructor Weapon called." << std::endl;
+}
 
-	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		Animal &operator=(const Animal &src);
-		virtual ~Animal(void);
+const std::string	&Weapon::getType(void) {
+	return (this->_type);
+}
 
-		std::string	getType(void) const;
-		virtual void		makeSound(void) const;
-};
-
-#endif
+void	Weapon::setType(std::string type) {
+	this->_type = type;
+}

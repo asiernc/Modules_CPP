@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:25:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/01 21:47:46 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:01:50 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
 Cat::Cat() : Animal() {
-	std::cout << "Default Cat constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
 }
 

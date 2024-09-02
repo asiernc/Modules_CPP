@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:52:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/01 21:44:10 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:49:14 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ Animal::Animal(const Animal &src) {
 
 Animal	&Animal::operator=(const Animal &src) {
 	std::cout << "Animal equal operator called" << std::endl;
-	_type = src.getType();
+	if (this != &src)
+		_type = src._type;
 	return (*this);
 }
 

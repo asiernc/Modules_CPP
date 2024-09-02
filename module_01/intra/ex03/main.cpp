@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 10:01:59 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/10 13:06:43 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/02 11:50:48 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-# include <iostream>
+int main()
+{
+	{
+		Weapon club = Weapon("Charizard");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("Pikachu");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("Torchic");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("Rayquaza");
+		jim.attack();
+	}
+	return (0);
+}
 
-class Animal {
-	protected:
-		std::string _type;
-
-	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		Animal &operator=(const Animal &src);
-		virtual ~Animal(void);
-
-		std::string	getType(void) const;
-		virtual void		makeSound(void) const;
-};
-
-#endif

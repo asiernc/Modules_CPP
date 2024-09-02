@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 10:01:59 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/15 20:00:24 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/02 14:09:01 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Harl.hpp"
 
-# include <iostream>
+int main(int argc, char *argv[]) {
+	Harl		harl;
+	std::string	str;
 
-class Animal {
-	protected:
-		std::string _type;
-
-	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		Animal &operator=(const Animal &src);
-		virtual ~Animal(void);
-
-		std::string	getType(void) const;
-		virtual void		makeSound(void) const;
-};
-
-#endif
+	if (argc != 2) {
+		std::cout << "What happens if I change the argument?" << std::endl;
+		return (1);
+	}
+	str = std::string(argv[1]);
+	if (str.size() && harl.complain(str))
+		return (0);
+	else {
+		std::cout << "What happens if I change the argument another time?" << std::endl;
+		return (1);
+	}
+}
