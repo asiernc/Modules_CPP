@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,36 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/Brain.hpp"
 
-Animal::Animal() : _type("Default") {
-	std::cout << "Animal default constructor called" << std::endl;
+Brain::Brain()  {
+	std::cout << "Brain default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type) : _type(type) {
-	std::cout << " Animal Parameterixed constructor called" << std::endl;
-}
-
-Animal::Animal(const Animal &src) {
-	std::cout << "Animal copy constructor called" << std::endl;
+Brain::Brain(const Brain &src) {
+	std::cout << "Brain copy constructor called" << std::endl;
 	*this = src;
 }
 
-Animal	&Animal::operator=(const Animal &src) {
-	std::cout << "Animal equal operator called" << std::endl;
+Brain	&Brain::operator=(const Brain &src) {
+	std::cout << "Brain equal operator called" << std::endl;
 	//if (this != &src)
-	this->_type = src._type;
+	*this->_ideas = *src._ideas;
 	return (*this);
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
+Brain::~Brain() {
+	std::cout << "Brain destructor called" << std::endl;
 }
 
-std::string	Animal::getType(void) const {
-	return (this->_type);
+void	Brain::setIdea(int index, std::string &idea) {
+	if (index >= 0 && index > MAX_IDEAS)
+		this->_ideas[index] = idea;
 }
 
-void	Animal::makeSound(void) const {
-	std::cout << "Default Animal sound" << std::endl;
+std::string	Brain::getIdea(int index) {
+	std::string tmp;
+
+	if (this->_ideas[index].empty() == 0)
+		return ("Empty");
+	return (this->_ideas[index]);
 }

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 21:28:32 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/15 19:57:29 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 19:14:44 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,16 @@ static void	replaceFilepath(std::fstream &oldFilepath, std::fstream &newFilepath
 	}
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
+	std::string		s1;
 	std::fstream	fileObj;
 	std::fstream	newFileObj;
 	std::string		newFilepathExtension = ".replace";
 	
-	if (argc != 4)
+	if (argc != 4 || std::string(argv[1]).empty()) {
 		std::cout << "Please use ./sedIsForLosers <filepathpath> <string1> <string2>" << std::endl;
+		return (1);
+	}
 	if (openFile(fileObj, argv[1]))
 		return (1);
 	newFilepathExtension.insert(0, argv[1]);

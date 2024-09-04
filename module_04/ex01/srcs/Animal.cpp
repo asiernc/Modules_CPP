@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:52:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 13:12:34 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/03 20:43:59 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,4 @@ std::string	Animal::getType(void) const {
 void	Animal::makeSound(void) const {
 	std::cout << "Default Animal sound" << std::endl;
 }
+

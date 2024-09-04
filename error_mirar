@@ -1,1 +1,4 @@
 sed -i s/Animal/gorila/g 
+
+
+for dir in ex*/; do (cd "$dir" && make fclean); done

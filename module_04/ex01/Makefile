@@ -6,25 +6,29 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/30 20:43:46 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/03 17:48:29 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= nowIt’sWeird!
+NAME 	= Polymorphism
 
 INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)ClapTrap.hpp \
-		  $(INC_DIR)ScavTrap.hpp \
-		  $(INC_DIR)FragTrap.hpp \
-		  $(INC_DIR)DiamondTrap.hpp
+INC		= $(INC_DIR)Animal.hpp \
+		  $(INC_DIR)Cat.hpp \
+		  $(INC_DIR)WrongAnimal.hpp \
+		  $(INC_DIR)WrongCat.hpp \
+		  $(INC_DIR)Brain.hpp \
+		  $(INC_DIR)Dog.hpp
 
-SRC		= $(SRC_DIR)ClapTrap.cpp \
-		  $(SRC_DIR)ScavTrap.cpp \
-		  $(SRC_DIR)FragTrap.cpp \
-		  $(SRC_DIR)DiamondTrap.cpp \
+SRC		= $(SRC_DIR)Animal.cpp \
+		  $(SRC_DIR)Cat.cpp \
+		  $(SRC_DIR)WrongAnimal.cpp \
+		  $(SRC_DIR)WrongCat.cpp \
+		  $(SRC_DIR)Dog.cpp \
+		  $(SRC_DIR)Brain.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)

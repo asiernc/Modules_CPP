@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:00:27 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 14:26:03 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 19:01:34 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,18 @@ void	Harl::_error() {
 }
 
 void	Harl::complain(std::string level) {
+	int 		flag = 0;
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Harl::*actions[])() = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+	for (int i = 0; i < 4; i++)
+	{
+		if (strcmp(level.c_str(), levels[i].c_str()) == 0)
+			flag = 1;
+		else
+			continue ;
+	}
+	if (flag != 1)
+		return ;
 	switch (level[0])
 	{
 		case 'D':

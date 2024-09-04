@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/01 21:43:49 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/03 12:12:47 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,14 @@ OBJ_DIR = objs/
 
 INC		= $(INC_DIR)Animal.hpp \
 		  $(INC_DIR)Cat.hpp \
+		  $(INC_DIR)WrongAnimal.hpp \
+		  $(INC_DIR)WrongCat.hpp \
 		  $(INC_DIR)Dog.hpp
 
 SRC		= $(SRC_DIR)Animal.cpp \
 		  $(SRC_DIR)Cat.cpp \
+		  $(SRC_DIR)WrongAnimal.cpp \
+		  $(SRC_DIR)WrongCat.cpp \
 		  $(SRC_DIR)Dog.cpp \
 		  $(SRC_DIR)main.cpp
 

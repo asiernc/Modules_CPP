@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:38:46 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/17 20:56:04 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/03 11:31:08 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <iostream>
 # include <string.h>
-
-// A member function int getRawBits( void ) const; that returns the raw value of the fixed-point value.
-// A member function void setRawBits( int const raw ); that sets the raw value of the fixed-point number
 
 class Fixed
 {

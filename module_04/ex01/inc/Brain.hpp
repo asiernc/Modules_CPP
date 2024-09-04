@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 19:57:09 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 20:33:38 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/02 10:01:59 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
 
+# define MAX_IDEAS 10
 
-class Dog : public Animal {
-	private:
-		Brain *_brain;
+class Brain {
+	protected:
+		std::string _ideas[MAX_IDEAS];
 
-	public:	
-		Dog(void);
-		Dog(const Dog &src);
-		Dog &operator=(const Dog &src);
-		~Dog(void);
+	public:
+		Brain(void);
+		Brain(const Brain &src);
+		Brain &operator=(const Brain &src);
+		~Brain(void);
 
-		std::string	getType(void);
-		void	makeSound(void) const;
-		Brain	*getBrain(void);
 		void	setIdea(int index, std::string &idea);
 		std::string	getIdea(int index);
-		
 };
 
 #endif
