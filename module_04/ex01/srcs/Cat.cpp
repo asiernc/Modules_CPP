@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:25:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 20:33:49 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:35:28 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Brain	*Cat::getBrain() const {
 	return (this->_brain);
 }
 
-void	Cat::setIdea(int index, std::string &idea) {
+void	Cat::setIdea(int index, std::string idea) {
 	this->_brain->setIdea(index, idea);
 }
 

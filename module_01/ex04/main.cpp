@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 21:28:32 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 19:14:44 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/03 10:39:38 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <fstream>
 
 static int	openFile(std::fstream &filepath, std::string path) {
-	// std::fstream::in: Abre el archivo especificado por path en modo de lectura.
-	filepath.open(path, std::fstream::in);
+	filepath.open(path.c_str(), std::fstream::in);
 	if (!filepath) {
 		std::cout << "Error opening the filepath." << std::endl;
 		return (1);
@@ -24,12 +23,6 @@ static int	openFile(std::fstream &filepath, std::string path) {
 }
 
 static int	createNewFile(std::fstream &newFileObj, std::string newPath) {
-	// newPath es un objeto de tipo std::string. El método c_str() de std::string
-	// convierte el std::string en un puntero a un array de caracteres
-	// (const char*), que es lo que ofstream espera como argumento. Este array de
-	// caracteres representa el nombre del archivo que se va a abrir o crear.
-	
-	// std::fstream::out se usa para crear un archivo nuevo o sobrescribir uno existente.
 	newFileObj.open(newPath.c_str(), std::fstream::out);
 	if (!newFileObj) {
 		std::cout << "Error creating the new filepath." << std::endl;
@@ -38,14 +31,22 @@ static int	createNewFile(std::fstream &newFileObj, std::string newPath) {
 	return (0);
 }
 
-static void	replaceFilepath(std::fstream &oldFilepath, std::fstream &newFilepath, std::string s1, std::string s2) {
+static void	replaceFileStrings(std::fstream &oldFilepath, std::fstream &newFilepath, std::string s1, std::string s2) {
 	std::string	line;
-	bool		endLine = false;
+	bool		firstLine = true;
 
+	if (!oldFilepath.is_open()) {
+        std::cerr << "Error: oldFilepath is not open." << std::endl;
+        return;
+    }
+    if (!newFilepath.is_open()) {
+        std::cerr << "Error: newFilepath is not open." << std::endl;
+        return;
+    }
 	while (std::getline(oldFilepath, line)) {
-		if (endLine)
+		if (!firstLine)
 			newFilepath << std::endl;
-		endLine = true;
+		firstLine = false;
 		std::size_t pos = 0;
 		while ((pos = line.find(s1, pos)) != std::string::npos) {
 			newFilepath << line.substr(0, pos);
@@ -57,13 +58,12 @@ static void	replaceFilepath(std::fstream &oldFilepath, std::fstream &newFilepath
 	}
 }
 
-int main(int argc, char *argv[]) {
-	std::string		s1;
+int main(int argc, char **argv) {
 	std::fstream	fileObj;
 	std::fstream	newFileObj;
 	std::string		newFilepathExtension = ".replace";
 	
-	if (argc != 4 || std::string(argv[1]).empty()) {
+	if (argc != 4 || std::string(argv[2]).empty()) {
 		std::cout << "Please use ./sedIsForLosers <filepathpath> <string1> <string2>" << std::endl;
 		return (1);
 	}
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 		fileObj.close();
 		return (1);
 	}
-	replaceFilepath(fileObj, newFileObj, std::string(argv[2]), std::string(argv[3]));
+	replaceFileStrings(fileObj, newFileObj, std::string(argv[2]), std::string(argv[3]));
 	fileObj.close();
 	newFileObj.close();
 }

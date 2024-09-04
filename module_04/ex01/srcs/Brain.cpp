@@ -32,7 +32,7 @@ Brain::~Brain() {
 	std::cout << "Brain destructor called" << std::endl;
 }
 
-void	Brain::setIdea(int index, std::string &idea) {
+void	Brain::setIdea(int index, std::string idea) {
 	if (index >= 0 && index > MAX_IDEAS)
 		this->_ideas[index] = idea;
 }

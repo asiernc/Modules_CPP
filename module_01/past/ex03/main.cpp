@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 20:23:30 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 12:18:38 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/08/10 13:06:43 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/08/14 21:13:36 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-# include "WrongAnimal.hpp"
+int main()
+{
+	{
+		Weapon club = Weapon("Charizard");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("Pikachu");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("Torchic");
+		HumanB jim("Jim");
+		jim.attack();
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("Rayquaza");
+		jim.attack();
+	}
+	return (0);
+}
 
-class WrongCat : public WrongAnimal {
-	private:
-
-	public:
-		WrongCat(void);
-		WrongCat(const WrongCat &src);
-		WrongCat &operator=(const WrongCat &src);
-		~WrongCat(void);
-
-		std::string	getType(void) const;
-		void makeSound(void) const ;
-};
-
-#endif

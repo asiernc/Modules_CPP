@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:23:30 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 20:33:33 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:12:58 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Cat : public Animal {
 		std::string	getType(void) const;
 		void makeSound(void) const ;
 		Brain	*getBrain(void) const;
-		void	setIdea(int index, std::string &idea);
+		void	setIdea(int index, std::string idea);
 		std::string	getIdea(int index);
 };
 

@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 20:28:21 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/09 21:27:10 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:20:56 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// • Zombie* newZombie( std::string name );
-// It creates a zombie, name it, and return it so you can use it outside of the function scope.
-// • void randomChump( std::string name );
-// It creates a zombie, name it, and the zombie announces itself.
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP

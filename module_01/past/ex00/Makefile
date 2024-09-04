@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 20:24:35 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/02 11:18:35 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/08/16 20:21:05 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombinator
+
 
 SRC = 	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 OBJ =	$(SRC:.cpp=.o)

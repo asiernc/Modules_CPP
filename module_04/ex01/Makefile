@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/03 17:48:29 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/04 10:33:10 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,11 @@ OBJ_DIR = objs/
 
 INC		= $(INC_DIR)Animal.hpp \
 		  $(INC_DIR)Cat.hpp \
-		  $(INC_DIR)WrongAnimal.hpp \
-		  $(INC_DIR)WrongCat.hpp \
 		  $(INC_DIR)Brain.hpp \
 		  $(INC_DIR)Dog.hpp
 
 SRC		= $(SRC_DIR)Animal.cpp \
 		  $(SRC_DIR)Cat.cpp \
-		  $(SRC_DIR)WrongAnimal.cpp \
-		  $(SRC_DIR)WrongCat.cpp \
 		  $(SRC_DIR)Dog.cpp \
 		  $(SRC_DIR)Brain.cpp \
 		  $(SRC_DIR)main.cpp

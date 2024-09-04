@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:00:25 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/15 21:46:55 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:43:01 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <stdbool.h>
+# include <cstring>
 
 // Colores ANSI
 #define RESET   "\033[0m"
@@ -35,8 +36,7 @@
 #define BACK_CYAN    "\033[46m"
 #define BACK_WHITE   "\033[47m"
 
-class Harl
-{
+class Harl {
 private:
 	void _debug(void);
 	void _info(void);

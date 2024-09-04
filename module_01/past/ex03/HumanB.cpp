@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 20:47:49 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 11:49:39 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/14 21:21:46 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ HumanB::HumanB(std::string name) : _name(name) {
 }
 
 HumanB::~HumanB() {
-	std::cout << "Human B: " << _name << " is destroyed." << std::endl;	
 }
 
 void	HumanB::attack(void) {

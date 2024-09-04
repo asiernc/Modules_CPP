@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:00:25 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/02 14:27:23 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/08/15 21:46:55 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@
 #define BACK_CYAN    "\033[46m"
 #define BACK_WHITE   "\033[47m"
 
-class Harl {
+class Harl
+{
 private:
 	void _debug(void);
 	void _info(void);

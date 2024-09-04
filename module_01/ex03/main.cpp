@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:06:43 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/14 21:13:36 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:53:23 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	{
 		Weapon club = Weapon("Torchic");
 		HumanB jim("Jim");
+		
 		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();

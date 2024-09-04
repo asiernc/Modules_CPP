@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 20:47:49 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/14 21:21:46 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 09:51:44 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
 
-HumanB::HumanB(std::string name) : _name(name) {
+HumanB::HumanB(std::string name) : _weapon(), _name(name) {
 	std::cout << "Human B: " << _name << " is created." << std::endl;
 }
 
 HumanB::~HumanB() {
+	std::cout << "Human B: " << _name << " is destroyed." << std::endl;	
 }
 
 void	HumanB::attack(void) {

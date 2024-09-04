@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:57:09 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 20:33:38 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:35:28 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Dog : public Animal {
 		std::string	getType(void);
 		void	makeSound(void) const;
 		Brain	*getBrain(void);
-		void	setIdea(int index, std::string &idea);
+		void	setIdea(int index, std::string idea);
 		std::string	getIdea(int index);
 		
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 20:45:24 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:35:28 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal {
 		// que las clases derivadas sobrescriban estas funciones. Esto habilita el
 		// polimorfismo, lo que significa que puedes llamar a las funciones de las
 		// clases derivadas a través de un puntero o referencia a la clase base.
-		virtual	void		setIdea(int index, std::string &idea) = 0;
+		virtual	void		setIdea(int index, std::string idea) = 0;
 		virtual std::string	getIdea(int index) = 0;
 };
 
