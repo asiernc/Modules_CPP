@@ -6,19 +6,19 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:25:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 16:58:38 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:25:19 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() : AAnimal() {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &src) : Animal() {
+Cat::Cat(const Cat &src) : AAnimal() {
 	std::cout << "Cat copy constructor called" << std::endl;
 	this->_brain = new Brain(*src._brain);
 }
@@ -26,7 +26,7 @@ Cat::Cat(const Cat &src) : Animal() {
 Cat	&Cat::operator=(const Cat &src) {
 	std::cout << "Cat equal operator called" << std::endl;
 	if (this != &src) {
-		Animal::operator=(src);
+		AAnimal::operator=(src);
 		delete this->_brain;
 		this->_brain = new Brain(*src._brain);
 		// quiero una copia del objeto, no una copia del puntero

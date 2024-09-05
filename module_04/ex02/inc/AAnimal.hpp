@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:50:22 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 20:55:45 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:23:31 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include "Brain.hpp"
@@ -20,16 +20,16 @@
 # define RED     "\033[31m"
 # define GREEN   "\033[32m" 
 
-class Animal {
+class AAnimal {
 	protected:
 		std::string _type;
+		AAnimal(void);
+		AAnimal(std::string type);
 
 	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		Animal &operator=(const Animal &src);
-		virtual ~Animal(void);
+		AAnimal(const AAnimal &src);
+		AAnimal &operator=(const AAnimal &src);
+		virtual ~AAnimal(void);
 
 		std::string	getType(void) const;
 		virtual void	makeSound(void) const;

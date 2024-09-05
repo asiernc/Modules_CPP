@@ -6,18 +6,18 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:57:09 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 16:59:02 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:25:58 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
 
-class Dog : public Animal {
+class Dog : public AAnimal {
 	private:
 		Brain 		*_brain;
 

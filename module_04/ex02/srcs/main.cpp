@@ -6,11 +6,11 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:14:17 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 20:53:14 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:24:23 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Animal.hpp"
+# include "../inc/AAnimal.hpp"
 # include "../inc/Cat.hpp"
 # include "../inc/Dog.hpp"
 
@@ -56,7 +56,7 @@ static void testBrainCatDeepCopy(void) {
 }
 
 static void	testExercise(void) {
-	Animal *animals[MAX_IDEAS];
+	AAnimal *animals[MAX_IDEAS];
 	
 	std::cout << std::endl << "______________________________" << std::endl;
 	for (int i = 0; i < MAX_IDEAS; i++) {
@@ -80,6 +80,7 @@ static void	testExercise(void) {
 }
 
 int main() {
+
 	std::string str;
 	
 	std::cout << "Write 1 for run brain deepcopy test" << std::endl;
