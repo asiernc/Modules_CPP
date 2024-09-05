@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 21:51:55 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/20 21:08:10 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:44:01 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,6 @@
 
 # include <iostream>
 # include <cmath>
-
-// Add these four public overloaded member functions to your class:
-// • A static member function min that takes as parameters two references on
-	// fixed-point numbers, and returns a reference to the smallest one.
-// • A static member function min that takes as parameters two references
-// to constant fixed-point numbers, and returns a reference to the smallest one.
-// • A static member function max that takes as parameters two references
-// on fixed-point numbers, and returns a reference to the greatest one.
-// • A static member function max that takes as parameters two references
-// to constant fixed-point numbers, and returns a reference to the greatest one.
-
 
 class Fixed
 {
@@ -62,9 +51,6 @@ class Fixed
 		Fixed	&operator--(void);//pre
 		Fixed	operator++(int); //post
 		Fixed	operator--(int); //post
-
-	// 	 • A static member function min that takes as parameters two references on
-	// // fixed-point numbers, and returns a reference to the smallest one.
 
 		static 			Fixed	&min(Fixed &a, Fixed &b);
 		static const	Fixed	&min(const Fixed &a, const Fixed &b);

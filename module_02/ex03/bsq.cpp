@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:36:25 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/23 15:20:18 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:44:36 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
-
-// To conclude, implement the following function in the appropriate file:
-//     bool bsp( Point const a, Point const b, Point const c, Point const point);
-// • a, b, c: The vertices of our beloved triangle.
-// • point: The point to check.
-// • Returns: True if the point is inside the triangle. False otherwise. Thus, if the point is a vertex or on edge, it will return False.
 
 static Fixed sign(Point a, Point b, Point c) {
 	Fixed	result;

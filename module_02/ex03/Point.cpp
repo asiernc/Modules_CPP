@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 20:07:06 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/23 15:18:31 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:47:33 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,12 @@ Point::Point(const Point &src) : _x(src._x), _y(src._y) {
 
 
 Point	&Point::operator=(const Point &src) {
-	// los valores son constantes por lo que no son modificables una vez que
-	// se asignan, por lo tanto, el operador de = deberia de ser anulado, o 
-	// eliminado, 
 	(void)src;
 	return (*this);
 }
 
 Point::~Point() {
-	
+	//std::cout << "Default destructor called" << std::endl;
 }
 
 Fixed	Point::x(void) const {

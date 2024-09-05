@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 21:55:03 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/22 20:20:06 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:46:55 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Fixed::Fixed() {
 	this->_fixedPoint = 0;
 }
 
-// copy constructor
 Fixed::Fixed(Fixed const &src) {
 	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
@@ -48,7 +47,7 @@ Fixed	&Fixed::operator=(Fixed const &src) {
 	//std::cout << "Equal operator called" << std::endl;
 	if (this != &src)
 		this->_fixedPoint = src.getRawBits();
-	return (*this); //devuelves puntero cuando quieres dvolver el obj modificado
+	return (*this);
 }
 
 // COMPARISON OPERATORS
@@ -110,8 +109,6 @@ Fixed	Fixed::operator/(Fixed const &src) const {
 // INCREMENT / DECREMENT OPERATORS
 
 Fixed	&Fixed::operator++() {
-	// Se incrementa con normalidad y se devuelve la referencia de este objeto 
-	// modificado.
 	this->_fixedPoint++;
 	return (*this);
 }
@@ -122,8 +119,6 @@ Fixed	&Fixed::operator--() {
 }
 
 Fixed	Fixed::operator++(int) {
-	// se crea un objeto temporal, que sera una copia del actual. este sera el
-	// se devuelva, para que sea evaluado antes de ser modificado.
 	Fixed	tmp(*this);
 
 	this->_fixedPoint++;
@@ -137,11 +132,6 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
-// se trabaja con referencias para no sobrecargar la memoria, si no se hace con
-// referencia se va a crear una copia del objeto y esta sera devuelta,
-// perdiendo el hilo de la clase, en cambio, si se devuelve la referencia lo 
-// que estamos haciendo es devolviendo el objeto que queremos, y si lo llamamos
-// ex Fixed &c = min(a, b), c tendra la referenia del menor. y no una copia.
 Fixed	&Fixed::min(Fixed &a, Fixed &b) {
 	if (a < b)
 		return (a);

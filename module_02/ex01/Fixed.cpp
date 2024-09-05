@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 21:55:03 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/20 20:17:36 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:00:52 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,9 @@ Fixed::Fixed(const float floatNum) {
 float	Fixed::toFloat(void) const {
 	return ((float)this->_fixedPoint / (1 << this->_fracBits));
 }
+
 int		Fixed::toInt(void) const {
 	return ((int)this->_fixedPoint >> this->_fracBits);
-}
-
-Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(Fixed const &src) {
@@ -48,6 +45,10 @@ Fixed	&Fixed::operator=(Fixed const &src) {
 	if (this != &src)
 		this->_fixedPoint = src.getRawBits();
 	return (*this);
+}
+
+Fixed::~Fixed() {
+	std::cout << "Destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits(void) const {

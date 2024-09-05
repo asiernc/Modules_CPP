@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:38:46 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/03 11:31:08 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:49:44 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@ class Fixed
 		static const int	_fractionalBits = 8;
 	public:
 		Fixed();
-		// Se invoca cuando se crea un nuevo objeto Fixed como copia de un objeto
-		//	existente.
-		// Esto asegura que la copia sea una copia profunda, si es necesario, lo
-		// 	que significa que cada objeto tiene sus propios datos independientes.
+		// This ensures that the copy is a deep copy, if necessary, meaning
+		// that each object has its own independent data.
 		Fixed(Fixed const &src);
+		Fixed	&operator=(Fixed const &src);
 		~Fixed();
 		
-		Fixed	&operator=(Fixed const &src);
-		int		getRawBits(void) const;
+		int		getRawBits(void) const ;
 		void	setRawBits(int const raw);
 };
 

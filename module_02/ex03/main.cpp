@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 22:05:56 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/22 20:31:16 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:43:34 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int main( void ) {
 	Point	a(0, 0);
 	Point	b(10, 0);
 	Point	c(0, 10);
-	Point	p1(0, 0);
+	Point	p1(0, 0); //At the line
 	Point	p2(10.1, 0);
-	Point	p3(0, 10);
+	Point	p3(1, 6.5f);
 	Point	p4(3, 3);
-	Point	p5(5.5, 5.5);
-	Point	p6(5, 5);
+	Point	p5(5.2f, 1.5f);
+	Point	p6(1, 1);
 
 	std::cout << "point a = " << a << std::endl;
 	std::cout << "point b = " << b << std::endl;

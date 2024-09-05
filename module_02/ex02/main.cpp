@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 22:05:56 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/22 18:43:09 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:32:24 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,37 @@
 int main( void ) {
 	Fixed		a;
 	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed	c;
 	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << RED << a << RESET << std::endl;
+	std::cout << RED << ++a << RESET << std::endl;
+	std::cout << RED << a << RESET << std::endl;
+	std::cout << RED << a++ << RESET << std::endl;
+	std::cout << RED << a << RESET << std::endl;
 
-	std::cout << b << std::endl;
+	{
+		std::cout << RED << "Value held of A: " << a << RESET << std::endl;
+		std::cout << RED << "Value held of B: " << b << RESET << std::endl;
+		std::cout << RED << "Max of A or B is: " << Fixed::max( a, b ).toFloat() << RESET << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
+		std::cout << std::endl << std::endl;
+		if (b > 8)
+			std::cout << RED << b << " is higher than 8" << RESET << std::endl;
 
-	// if (b > 8)
-	// 	std::cout << b << " is higher than 8" << std::endl;
-
-	// Fixed	c;
-	// c++;
-	// --c;
-	// c++;
-	// ++c;
-	// if (a != c)
-	// 	std::cout << a << " is not equal to " << c << std::endl;
-
+		c++;
+		c++;
+		--c;
+		++c;
+		std::cout << RED << "Value held of B: " << b << RESET << std::endl;
+		std::cout << RED << "Value held of C: " << c << RESET << std::endl;
+		c = c + Fixed(5.5f);
+		std::cout << RED << "Value held of C + 5.5f: " << c << RESET << std::endl;
+		if (b != c)
+			std::cout << RED << b << " is not equal to " << c << RESET << std::endl;
+		if (b >= c)
+			std::cout << b << " is bigger than " << c << std::endl;
+	}
+	std::cout << std::endl;
 	return 0;
 }
 

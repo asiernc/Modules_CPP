@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:38:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/17 21:44:59 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:54:21 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,10 @@ Fixed::Fixed(Fixed const &src) {
 Fixed	&Fixed::operator=(Fixed const &src) {
 	std::cout << "Copy assignment operator called." << std::endl;
 	if (this != &src)
+		// if i wish call a function in a const Fixed Obj (Fixed const &src), every function always be const
 		this->_fixedPoint = src.getRawBits();
 	return (*this);
 }
-
-// es un método constante. Esto significa que el método no puede modificar ningún
-// miembro de datos de la instancia de la clase en la que se llama, ni llamar a
-// otros métodos no constantes de la misma clase.
-
-// Al haber declarado arriba en el operador de asignacion el objeto como const,
-// si quiero llamar a algun metodo a traves de el solo podra ser este const, si
-// no lo es no podre llamarlo. Dara error. Esto se debe a que el compilador debe
-// asegurarse de que no se modifique el estado del objeto
 
 int		Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called." << std::endl;
