@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/08/30 20:26:53 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/06 19:19:55 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,13 @@ YELLOW	= \033[33m
 GREEN	= \033[32m
 END		= \033[0m
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
+	@echo "$(BLUE)$(OBJ_DIR) directory created$(END)"
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp Makefile | $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp Makefile
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 	@echo "$(BLUE)-> $<$(END)"
 

@@ -6,22 +6,21 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:18:50 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:17:21 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:09:11 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : _gateMode(false) {
+ScavTrap::ScavTrap() : ClapTrap(), _gateMode(false) {
 	std::cout << "ScavTrap default constructor called." << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : _gateMode(false) {
-	std::cout << "ScavTrap default constructor called." << std::endl;
-	this->_name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _gateMode(false) {
+	std::cout << "ScavTrap parameterixed constructor called." << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;

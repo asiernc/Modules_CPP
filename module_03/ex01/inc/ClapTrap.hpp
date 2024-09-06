@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:37 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/27 17:30:30 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:29:30 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	protected: //para cuando se va a heredar
+	protected: //for inheritance
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;
@@ -37,6 +37,9 @@ class ClapTrap {
 		unsigned int	getHitPoints(void) const;
 		unsigned int	getEnergyPoints(void) const;
 		unsigned int	getAttackDamage(void) const;
+
+		// For testing (not exercise)
+		virtual void	setHitPoints(int hitPoints);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:42 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/29 20:26:06 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:27:23 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 #include "../inc/ScavTrap.hpp"
 
 int main( void ) {
-	ClapTrap Rayquaza("Rayquaza");
-	ClapTrap RayquazaShiny = Rayquaza;
-	ClapTrap RayquazaShinyHack[2];
-	ScavTrap	Cyndaquil("Cyndaquil");
+	//ClapTrap Rayquaza("Rayquaza");
+	//ClapTrap RayquazaShiny = Rayquaza;
+	//ClapTrap RayquazaShinyHack[2];
+	ScavTrap	cyndaquil("cyndaquil");
+	ScavTrap	charizard("charizard");
 	
-	Cyndaquil.attack("Dragon claw");
-	Cyndaquil.takeDamage(10);
-	Cyndaquil.takeDamage(20);
-	Cyndaquil.beRepaired(20);
-	Cyndaquil.takeDamage(20);
-	Cyndaquil.guardGate();
-	Cyndaquil.guardGate();
+	for (int i = 0; i < 5; i++) {
+		cyndaquil.attack("Charizard");
+		charizard.takeDamage(20);
+	}
+	cyndaquil.beRepaired(20);
+	charizard.beRepaired(20);
+	cyndaquil.setHitPoints(0);
+	cyndaquil.attack("chikorita");
+	cyndaquil.guardGate();
+	cyndaquil.guardGate();
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:45:08 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:07:46 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &src) {
 	std::cout << "ClapTrap Equal operator for constructor " << src.getName() << " called." << std::endl;
-	// is better with getters o directly the value of the variable ex _name
 	if (this != &src) {
 		this->_name = src.getName();
 		this->_hitPoints = src.getHitPoints();

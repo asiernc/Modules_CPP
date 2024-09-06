@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:05:47 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/27 18:17:35 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:49:34 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class ScavTrap : public ClapTrap {
 
 		bool		getGuardGate(void) const;
 		void 		guardGate(void);
-
 };
 
 #endif

@@ -6,19 +6,18 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/29 20:19:31 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:30:48 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
-
 ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)  {
-	std::cout << "Default ClapTrap constructor called." << std::endl;
+	std::cout << "Default " << this->_name <<" constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "ClapTrap Parameterixed constructor called." << std::endl;
+	std::cout << "ClapTrap " << this->_name <<" Parameterixed constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
@@ -27,7 +26,7 @@ ClapTrap::ClapTrap(const ClapTrap &src) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap Destructor called." << std::endl;
+	std::cout << "ClapTrap " << this->_name <<" destructor called." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &src) {
@@ -100,4 +99,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	this->_hitPoints += amount;
 	std::cout << "ClapTrap " <<  this->getName() << " be repaired with " << amount << " points." << std::endl;
 	this->_energyPoints--;
+}
+
+void	ClapTrap::setHitPoints(int hitPoints) {
+	this->_hitPoints = hitPoints;
 }

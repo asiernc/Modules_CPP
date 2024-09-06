@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/29 20:04:26 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:53:14 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &src) {
 	std::cout << "Equal operator for constructor " << src.getName() << " called." << std::endl;
-	// is better with getters o directly the value of the variable ex _name
 	if (this != &src) {
 		this->_name = src.getName();
 		this->_hitPoints = src.getHitPoints();
@@ -57,7 +56,6 @@ unsigned int	ClapTrap::getEnergyPoints() const {
 unsigned int	ClapTrap::getAttackDamage() const {
 	return (this->_attackDamage);
 }
-
 
 void ClapTrap::attack(const std::string& target) {
 	// When ClapTrack attacks, it causes its target to lose <attack damage> hit points.

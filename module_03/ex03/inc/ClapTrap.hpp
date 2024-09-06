@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:37 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/27 20:51:53 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:05:13 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	protected: //para cuando se va a heredar
+	protected:
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;

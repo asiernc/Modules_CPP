@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:27:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:45:17 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:10:39 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,25 @@
 // • Attack damage (FragTrap)
 // • attack() (Scavtrap)
 
-DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"){//, _name("DefaultDiamondTrap") {
-	std::cout << "DiamondTrap default constructor" << std::endl;
-	this->_name = "DefaultDiamondTrap";
+DiamondTrap::DiamondTrap()
+	: ClapTrap("Default_clap_name"), ScavTrap(), FragTrap(), _name("DefaultDiamondTrap") {
+	std::cout << "DiamondTrap " << this->_name << " default constructor" << std::endl;
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"),
-	ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
-{
-	std::cout << "DiamondTrap param constructor" << std::endl;
-	this->_name = name;
+DiamondTrap::DiamondTrap(std::string name)
+	: ClapTrap(name + "_clap_name"), ScavTrap(name + "_scrav_name"), FragTrap(name + "_frag_name"),
+	_name(name)	{
+	std::cout << "DiamondTrap " << this->_name << " param constructor" << std::endl;
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src)
-	: ClapTrap(src._name + "_clap_name"), ScavTrap(src._name + "_clap_name"),
-	FragTrap(src._name + "_clap_name")
-{
+	: ClapTrap(src._name + "_clap_name"), ScavTrap(src._name + "_srav_name"), FragTrap(src._name + "_frag_name") {
 	*this = src;
 }
 
@@ -55,7 +52,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &src) {
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap destructor" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " destructor" << std::endl;
 }
 
 void	DiamondTrap::whoAmI() {

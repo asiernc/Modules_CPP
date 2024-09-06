@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:42 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/29 20:04:22 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:54:30 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int main( void ) {
 	
 	Rayquaza.attack("Dragon claw");
 	Rayquaza.takeDamage(10);
-	Rayquaza.takeDamage(20);
 	Rayquaza.beRepaired(20);
-	Rayquaza.takeDamage(20);
 	return (0);
 }

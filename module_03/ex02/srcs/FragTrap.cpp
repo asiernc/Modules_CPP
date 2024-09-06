@@ -6,13 +6,13 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:58:41 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:17:06 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:56:44 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap() {
 	std::cout << "Default FragTrap constructor" << std::endl;
 	this->_name = "Default";
 	this->_hitPoints = 100;
@@ -20,7 +20,7 @@ FragTrap::FragTrap() {
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Param FragTrap constructor" << std::endl;
 	this->_name = name;
 	this->_hitPoints = 100;
@@ -46,9 +46,6 @@ FragTrap	&FragTrap::operator=(const FragTrap &src) {
 	}
 	return (*this);
 }
-
-
-//oh yeah mama, it doesn't matter
 
 void	FragTrap::highFivesGuys() {
 	std::string	str;

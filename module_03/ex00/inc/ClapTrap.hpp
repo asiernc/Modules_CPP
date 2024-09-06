@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:37 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/27 15:58:22 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:51:18 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 # define CLAPTRAP_H
 
 # include <iostream>
-
-// It will be called ClapTrap and will have the following private attributes initialized to the values specified in brackets:
-// • Name, which is passed as parameter to a constructor
-// • Hit points (10), represent the health of the ClapTrap
-// • Energy points (10)
-// • Attack damage (0)
-
-// Add the following public member functions so the ClapTrap looks more realistic:
-// • void attack(const std::string& target); • void takeDamage(unsigned int amount);
-// • void beRepaired(unsigned int amount);
 
 class ClapTrap {
 	private:

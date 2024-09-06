@@ -6,23 +6,21 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:58:41 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:45:44 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/06 19:13:02 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap() {
 	std::cout << "FragTrap default constructor" << std::endl;
-	this->_name = "Default";
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap parameterixed constructor" << std::endl;
-	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
@@ -34,7 +32,7 @@ FragTrap::FragTrap(const FragTrap &src) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap destructor" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &src) {

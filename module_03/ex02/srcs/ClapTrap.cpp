@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:03:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/30 20:16:59 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 19:55:41 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ unsigned int	ClapTrap::getAttackDamage() const {
 	return (this->_attackDamage);
 }
 
-
 void ClapTrap::attack(const std::string& target) {
-	// When ClapTrack attacks, it causes its target to lose <attack damage> hit points.
 	if (this->getHitPoints() == 0) {
 		std::cout << "ClapTrap " <<  this->getName() << " is died, so, it cannot attack." << std::endl;
 		return ;
@@ -88,7 +86,6 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	// When ClapTrap repairs itself, it gets <amount> hit points back. Attacking and
 	if (this->getHitPoints() == 0) {
 		std::cout << "ClapTrap " <<  this->getName() << " is died, so, it cannot be repaired." << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:54:38 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/08/28 21:36:01 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:06:54 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class FragTrap : virtual public ClapTrap {
 	private:
 		
 	public:
-		FragTrap();
+		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(const FragTrap &src);
-		~FragTrap();
 		FragTrap	&operator=(const FragTrap &src);
+		~FragTrap(void);
 
 		void 		attack(const std::string& target);
 		void		highFivesGuys(void);
