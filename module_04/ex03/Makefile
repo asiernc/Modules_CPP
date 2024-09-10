@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/04 21:24:50 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/06 21:24:34 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,13 @@ INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)AAnimal.hpp \
-		  $(INC_DIR)Cat.hpp \
-		  $(INC_DIR)Brain.hpp \
-		  $(INC_DIR)Dog.hpp
+INC		= $(INC_DIR)AMateria.hpp \
+		  //$(INC_DIR)Cat.hpp \
+		  //$(INC_DIR)Dog.hpp
 
-SRC		= $(SRC_DIR)AAnimal.cpp \
-		  $(SRC_DIR)Cat.cpp \
-		  $(SRC_DIR)Dog.cpp \
-		  $(SRC_DIR)Brain.cpp \
-		  $(SRC_DIR)main.cpp
+SRC		= $(SRC_DIR)AMateria.cpp \
+		  //$(SRC_DIR)Brain.cpp \
+		  //$(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
