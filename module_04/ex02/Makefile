@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/04 21:24:50 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/10 16:30:56 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC		= $(SRC_DIR)AAnimal.cpp \
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP -g
 
 # Colored output
 ERASE	= \033[2K\r

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 12:48:14 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/07 21:15:50 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:31:25 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 	if (idx >= 0 && idx < INVENTORY_SIZE) {
 		std::cout << this->_name << " unequip his materia " << this->_inventory[idx]->getType() << std::endl;
-		// delete ?
+		// delete ? verificar previo
 		delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 	}

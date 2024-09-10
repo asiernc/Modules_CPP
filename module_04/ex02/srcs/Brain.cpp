@@ -23,8 +23,8 @@ Brain::Brain(const Brain &src) {
 
 Brain	&Brain::operator=(const Brain &src) {
 	std::cout << "Brain equal operator called" << std::endl;
-	//if (this != &src)
-	*this->_ideas = *src._ideas;
+	if (this != &src)
+		*this->_ideas = *src._ideas;
 	return (*this);
 }
 

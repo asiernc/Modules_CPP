@@ -27,8 +27,8 @@ AAnimal::AAnimal(const AAnimal &src) {
 
 AAnimal	&AAnimal::operator=(const AAnimal &src) {
 	std::cout << "AAnimal equal operator called" << std::endl;
-	//if (this != &src)
-	this->_type = src._type;
+	if (this != &src)
+		this->_type = src._type;
 	return (*this);
 }
 

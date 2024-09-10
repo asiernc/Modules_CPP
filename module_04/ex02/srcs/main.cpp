@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:14:17 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 21:24:23 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:45:29 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // delete directly dogs and cats as Animals. The appropriate destructors must be
 // called in the expected order.
 
-static void	testBrainDeepCopy(void) {
+/*static void	testBrainDeepCopy(void) {
 	Brain	*gyarados = new Brain();
 
 	Brain	*lugia = new Brain();
@@ -77,11 +77,19 @@ static void	testExercise(void) {
 	for (int i = 0; i < MAX_IDEAS; i++) {
 		delete animals[i];
 	}
-}
+}*/
+
 
 int main() {
 
-	std::string str;
+	Dog base;
+	{
+		Dog tmp = base;
+		base.setIdea(0, "test");
+		std::cerr << "OKA\n";
+		std::cout << tmp.getIdea(0) << '\n';
+	}
+	/*std::string str;
 	
 	std::cout << "Write 1 for run brain deepcopy test" << std::endl;
 	std::cout << "Write 2 for cat brain deepcopy test" << std::endl;
@@ -100,6 +108,6 @@ int main() {
 			default:
 				break ;
 		}
-	}
+	}*/
 	return 0;
 }
