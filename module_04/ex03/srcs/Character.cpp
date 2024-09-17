@@ -6,25 +6,19 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 12:48:14 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/10 15:31:25 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 21:06:05 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-// Your Character must have a constructor taking its name as a parameter.
-// Any copy (using copy constructor or copy assignment operator) of a
-//  Character must be deep. During copy, the Materias of a Character
-//  must be deleted before the new ones are added to their inventory.
-//  Of course, the Materias must be deleted when a Character is
-//  destroyed.
 Character::Character() : _name("Default") {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		this->_inventory[i] = NULL;
 	};
 }
 
-Character::Character(std::string &name) : _name(name) {
+Character::Character(const std::string &name) : _name(name) {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		this->_inventory[i] = NULL;
 	};
@@ -47,6 +41,12 @@ Character	&Character::operator=(const Character &src) {
 		};
 	}
 	return (*this);
+}
+
+Character::~Character() {
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+		if (this->_inventory[i])
+			delete this->_inventory[i];
 }
 
 const std::string &Character::getName(void) const {
@@ -75,10 +75,8 @@ void Character::unequip(int idx) {
 	
 }
 void Character::use(int idx, ICharacter &target) {
-	if (this->_inventory[idx] != NULL) {
-		std::cout << this->_name << "use his "
-		<< this->_inventory[idx]->getType() <<
-		"matter against " << target.getName() << std::endl;
-	}
+	if (idx >= 0 && idx < INVENTORY_SIZE && this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
+	else
+		std::cout << "You can't use anything." << std::endl;
 }
-

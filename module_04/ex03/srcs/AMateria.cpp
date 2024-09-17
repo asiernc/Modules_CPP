@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 21:23:43 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/07 21:22:11 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:44:12 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ AMateria::AMateria(const AMateria &src) {
 
 AMateria	&AMateria::operator=(const AMateria &src) {
 	if (this != &src) {
-		this->_type = src.getType(); // ?????
+		this->_type = src.getType();
 	}
 	return (*this);
 }

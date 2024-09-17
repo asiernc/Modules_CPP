@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:25:39 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 21:25:19 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:22:29 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ Cat::Cat() : AAnimal() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &src) : AAnimal() {
+Cat::Cat(const Cat &src) : AAnimal("cat") {
 	std::cout << "Cat copy constructor called" << std::endl;
-	this->_brain = new Brain(*src._brain);
+	*this = src;
 }
 
 Cat	&Cat::operator=(const Cat &src) {
 	std::cout << "Cat equal operator called" << std::endl;
 	if (this != &src) {
-		AAnimal::operator=(src);
-		delete this->_brain;
+		this->_type = src._type;
 		this->_brain = new Brain(*src._brain);
 		// quiero una copia del objeto, no una copia del puntero
 		// por eso se hace *src._brain, y no src._brain,

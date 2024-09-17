@@ -10,26 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+# include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure") {
+Cure::Cure() : AMateria("cure") {
 }
 
-Cure::Cure(const Cure &src) {
-	*this = src;
+Cure::Cure(const Cure &src) : AMateria(src) {
 }
+
 Cure	&Cure::operator=(const Cure &src) {
-	(void)src;
-	return *this;
+	if (this != &src)
+        AMateria::operator=(src); 
+	return (*this);
 }
 
 Cure::~Cure() {
 }
 
 Cure	*Cure::clone() const {
-	return (new Cure());// new Cure(*this)?? 
+	return (new Cure(*this));// new Cure(*this)?? 
 }
 
 void	Cure::use(ICharacter &target) {
-	std::cout << "* heals " target.getName() << "' wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "' wounds *" << std::endl;
 }

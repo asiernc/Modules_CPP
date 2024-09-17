@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/06 19:23:29 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/17 20:40:19 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,19 +38,19 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)%.o: srcs/%.cpp Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(BLUE)-> $<$(END)\n"
+	@echo "$(BLUE)-> $<$(END)"
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)$(NAME) made$(END)\n"
+	@echo "$(GREEN)$(NAME) made$(END)"
 
 clean:
 	rm -rdf $(OBJ_DIR)
-	@echo "$(YELLOW)Objects removed$(END)\n"
+	@echo "$(YELLOW)Objects removed$(END)"
 
 fclean:	clean
 	rm -f $(NAME)
-	@echo "$(YELLOW)$(NAME) removed$(END)\n"
+	@echo "$(YELLOW)$(NAME) removed$(END)"
 
 re:	fclean all
 

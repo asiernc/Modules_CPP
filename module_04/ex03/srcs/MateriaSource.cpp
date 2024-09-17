@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/07 21:50:02 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:35:06 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,12 @@ void	MateriaSource::learnMateria(AMateria *materia) {
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type) {
-	
+	for (int i = 0; i < INVENTORY_SIZE; i++) {
+		if (this->_materiasLearned[i] != NULL
+			&& this->_materiasLearned[i]->getType() == type)
+			return (this->_materiasLearned[i]->clone());
+		else
+			continue;
+	}
+	return (0);
 }

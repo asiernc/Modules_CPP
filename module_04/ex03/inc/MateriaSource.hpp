@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:23:04 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/07 21:50:05 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:34:55 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class MateriaSource : public IMateriaSource {
 		virtual	~MateriaSource(void);
 
 		void 		learnMateria(AMateria *materia);
-		AMateria* 	createMateria(std::string const &type)
+		AMateria* 	createMateria(std::string const &type);
 };
 
 #endif

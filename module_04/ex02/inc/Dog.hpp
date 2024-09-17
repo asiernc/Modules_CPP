@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:57:09 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 21:25:58 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/11 20:23:14 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog : public AAnimal {
 		Dog &operator=(const Dog &src);
 		~Dog(void);
 
-		std::string	getType(void);
+		std::string	getType(void) const;
 		void		makeSound(void) const;
 		void		setIdea(int index, const std::string &idea);
 		std::string	getIdea(int index);
