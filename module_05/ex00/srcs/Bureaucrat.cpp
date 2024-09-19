@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 21:41:41 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/18 20:01:32 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/09/18 20:32:02 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/18 20:38:09 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "Bureaucrat.hpp"
 
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
-
-class Ice : public AMateria {
-	private:
+Bureaucrat::Bureaucrat(void) : _name("default"), _range(150) {
 	
-	public:
-		Ice(void);
-		Ice(const Ice &src);
-		Ice	&operator=(const Ice &src);
-		~Ice(void);
+}
 
-		Ice	*clone() const;
-		void 		use(ICharacter& target);
-};
+Bureaucrat::Bureaucrat(std::string name, int range) : _name(name) {
+	if ()
+}
 
-#endif
+Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+	
+}
+
+Bureaucrat	Bureaucrat::&operator(const Bureaucrat &src) {
+	
+}
+
+Bureaucrat::~Bureaucrat(void) {
+	
+}

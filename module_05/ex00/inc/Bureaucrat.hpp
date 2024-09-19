@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 21:41:41 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/18 20:01:32 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/09/18 20:28:02 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/09/18 20:34:40 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
+#include <iostream>
 
-class Ice : public AMateria {
+class Bureaucrat {
 	private:
-	
+		const std::string	_name;
+		int					_range;
 	public:
-		Ice(void);
-		Ice(const Ice &src);
-		Ice	&operator=(const Ice &src);
-		~Ice(void);
+		Bureaucrat(void);
+		Bureaucrat(std::string name, int range);
+		Bureaucrat(const Bureaucrat &src);
+		Bureaucrat	&operator=(const Bureaucrat &src);
+		~Bureaucrat(void);
 
-		Ice	*clone() const;
-		void 		use(ICharacter& target);
-};
+		const std::string 
+}
 
 #endif

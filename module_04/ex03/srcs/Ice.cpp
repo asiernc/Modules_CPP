@@ -6,13 +6,14 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 21:51:27 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 20:59:48 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:05:43 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice() : AMateria("ice") {
+	std::cout << YELLOW << "Ice constructor called" << RESET << std::endl;
 }
 
 Ice::Ice(const Ice &src) : AMateria(src) {
@@ -24,6 +25,7 @@ Ice	&Ice::operator=(const Ice &src) {
 }
 
 Ice::~Ice() {
+	std::cout << RED << "Ice Destructor called" << RESET << std::endl;
 }
 
 Ice	*Ice::clone() const {

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 21:19:59 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 20:45:58 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:09:19 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <iostream>
 # include "ICharacter.hpp"
+
+# define RESET   "\033[0m"
+# define RED     "\033[31m"
+# define YELLOW  "\033[33m"
+# define GREEN   "\033[32m" 
+
 
 class ICharacter;
 

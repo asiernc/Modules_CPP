@@ -6,18 +6,18 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 21:23:43 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 20:44:12 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:04:45 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "AMateria.hpp"
 
 AMateria::AMateria() : _type("Default") {
-	std::cout << "AMateria default constructor" << std::endl;
+	std::cout << YELLOW << "AMateria default constructor" << RESET << std::endl;
 }
 
 AMateria::AMateria(const std::string &type) : _type(type) {
-	std::cout << "AMateria default parameterixed constructor" << std::endl;
+	std::cout << YELLOW << "AMateria default parameterixed constructor" << RESET << std::endl;
 }
 
 AMateria::AMateria(const AMateria &src) {
@@ -41,5 +41,5 @@ void	AMateria::use(ICharacter &target) {
 }
 
 AMateria::~AMateria() {
-	std::cout << "AMateria destructor" << std::endl;
+	std::cout << RED << "AMateria destructor" << RESET << std::endl;
 }

@@ -6,13 +6,14 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 12:48:14 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 21:06:05 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:12:35 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character() : _name("Default") {
+	std::cout << YELLOW << "Character constructor called" << RESET << std::endl;
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		this->_inventory[i] = NULL;
 	};
@@ -44,6 +45,7 @@ Character	&Character::operator=(const Character &src) {
 }
 
 Character::~Character() {
+	std::cout << RED << "Character Destructor called" << RESET << std::endl;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		if (this->_inventory[i])
 			delete this->_inventory[i];
@@ -66,8 +68,8 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 	if (idx >= 0 && idx < INVENTORY_SIZE) {
 		std::cout << this->_name << " unequip his materia " << this->_inventory[idx]->getType() << std::endl;
-		// delete ? verificar previo
-		delete this->_inventory[idx];
+		if (this->_inventory[idx])
+			delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 	}
 	else

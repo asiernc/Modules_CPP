@@ -6,13 +6,14 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 20:35:06 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:08:42 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
+	std::cout << YELLOW << "MateriaSource constructor called" << RESET << std::endl;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->_materiasLearned[i] = NULL;
 }
@@ -36,6 +37,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &src) {
 }
 
 MateriaSource::~MateriaSource() {
+	std::cout << RED << "MateriaSource Destructor called" << RESET << std::endl;
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		if (this->_materiasLearned[i])
 			delete this->_materiasLearned[i];

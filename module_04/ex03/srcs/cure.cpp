@@ -13,6 +13,7 @@
 # include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {
+	std::cout << YELLOW << "Cure constructor called" << RESET << std::endl;
 }
 
 Cure::Cure(const Cure &src) : AMateria(src) {
@@ -25,10 +26,11 @@ Cure	&Cure::operator=(const Cure &src) {
 }
 
 Cure::~Cure() {
+	std::cout << RED << "Cure Destructor called"<< RESET << std::endl;
 }
 
 Cure	*Cure::clone() const {
-	return (new Cure(*this));// new Cure(*this)?? 
+	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter &target) {
