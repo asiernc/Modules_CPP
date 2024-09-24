@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 20:32:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/11 20:23:40 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:59:58 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ Dog &Dog::operator=(const Dog &src) {
 }
 
 Dog::~Dog() {
+	// delete calls brain destructor!!! brain destructor is in
+	// charge of releasing the array of ideas of brain
 	delete this->_brain;
 	std::cout << "Dog destructor called" << std::endl;
 }

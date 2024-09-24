@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:28:02 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/20 20:35:54 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/24 21:01:03 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -23,13 +26,13 @@ class Bureaucrat {
 	public:
 		class GradeTooHighException : public std::exception {
 			public:
-				const char *what() const throw() {
+				virtual const char *what() const throw() {
 					return ("Grade too high!");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				const char *what() const throw() {
+				virtual const char *what() const throw() {
 					return ("Grade too low!");
 				}
 		};
@@ -41,9 +44,16 @@ class Bureaucrat {
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;
-
-		void	incrementGrade(void);
-		void	decrementGrade(void);
+		void		incrementGrade(void);
+		void		decrementGrade(void);
+		void		signForm(AForm &form) const;
+		
+		void		executeForm(AForm const &form) const;
+		// Lastly, add the executeForm(AForm const & form) member function
+		// to the Bureau- crat. It must attempt to execute the form.
+		// If it’s successful, print something like:
+   		// 	<bureaucrat> executed <form>
+		// If not, print an explicit error message.
 };
 
 std::ostream	&operator<<(std::ostream &out, Bureaucrat &src);

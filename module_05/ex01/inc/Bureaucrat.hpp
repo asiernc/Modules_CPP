@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:28:02 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/20 20:35:54 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:35:20 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -23,13 +26,13 @@ class Bureaucrat {
 	public:
 		class GradeTooHighException : public std::exception {
 			public:
-				const char *what() const throw() {
+				virtual const char *what() const throw() {
 					return ("Grade too high!");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				const char *what() const throw() {
+				virtual const char *what() const throw() {
 					return ("Grade too low!");
 				}
 		};
@@ -41,9 +44,9 @@ class Bureaucrat {
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;
-
-		void	incrementGrade(void);
-		void	decrementGrade(void);
+		void		incrementGrade(void);
+		void		decrementGrade(void);
+		void		signForm(Form &form) const;
 };
 
 std::ostream	&operator<<(std::ostream &out, Bureaucrat &src);

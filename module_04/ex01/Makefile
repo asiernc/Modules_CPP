@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/04 10:33:10 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/19 19:45:38 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ YELLOW	= \033[33m
 GREEN	= \033[32m
 END		= \033[0m
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp Makefile | $(OBJ_DIR)
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp Makefile
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 	@echo "$(BLUE)-> $<$(END)"
 

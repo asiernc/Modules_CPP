@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 21:14:17 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/04 20:53:14 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:47:49 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static void	testBrainDeepCopy(void) {
 	std::cout << "groundon 3st idea: " << groudon->getIdea(0) << std::endl;
 	delete groudon;
 	std::cout << "Gyarados 1st idea: " << gyarados->getIdea(0) << std::endl;
+	delete gyarados;
 }
 
 static void testBrainCatDeepCopy(void) {

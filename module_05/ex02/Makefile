@@ -6,31 +6,33 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/19 19:45:51 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/24 19:27:19 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= Polymorphism
+NAME 	= bureaucrat
 
 INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)AAnimal.hpp \
-		  $(INC_DIR)Cat.hpp \
-		  $(INC_DIR)Brain.hpp \
-		  $(INC_DIR)Dog.hpp
+INC		= $(INC_DIR)Bureaucrat.hpp \
+		  $(INC_DIR)AForm.hpp	\
+		  $(INC_DIR)ShrubberyCreationForm.hpp \	
+		  $(INC_DIR)RobotomyRequestForm.hpp \
+		  $(INC_DIR)PresidentialPardonForm.hpp
 
-SRC		= $(SRC_DIR)AAnimal.cpp \
-		  $(SRC_DIR)Cat.cpp \
-		  $(SRC_DIR)Dog.cpp \
-		  $(SRC_DIR)Brain.cpp \
+SRC		= $(SRC_DIR)Bureaucrat.cpp \
+		  $(SRC_DIR)AForm.cpp \
+		  $(SRC_DIR)ShrubberyCreationForm.cpp \
+		  $(SRC_DIR)RobotomyRequestForm.cpp \
+		  $(SRC_DIR)PresidentialPardonForm.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP
 
 # Colored output
 ERASE	= \033[2K\r
