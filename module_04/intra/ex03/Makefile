@@ -3,30 +3,32 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/26 10:14:01 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/11 20:48:25 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= bureaucrat
+NAME 	= interface
 
 INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)Bureaucrat.hpp \
-		  $(INC_DIR)AForm.hpp	\
-		  $(INC_DIR)ShrubberyCreationForm.hpp \
-		  $(INC_DIR)RobotomyRequestForm.hpp \
-		  $(INC_DIR)PresidentialPardonForm.hpp
+INC		= $(INC_DIR)AMateria.hpp \
+		  $(INC_DIR)Character.hpp \
+		  $(INC_DIR)Cure.hpp \
+		  $(INC_DIR)Ice.hpp \
+		  $(INC_DIR)ICharacter.hpp \
+		  $(INC_DIR)IMateriaSource.hpp \
+		  $(INC_DIR)MateriaSource.hpp
 
-SRC		= $(SRC_DIR)Bureaucrat.cpp \
-		  $(SRC_DIR)AForm.cpp \
-		  $(SRC_DIR)ShrubberyCreationForm.cpp \
-		  $(SRC_DIR)RobotomyRequestForm.cpp \
-		  $(SRC_DIR)PresidentialPardonForm.cpp \
+SRC		= $(SRC_DIR)AMateria.cpp \
+		  $(SRC_DIR)Character.cpp \
+		  $(SRC_DIR)Ice.cpp \
+		  $(SRC_DIR)Cure.cpp \
+		  $(SRC_DIR)MateriaSource.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
