@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 21:50:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/26 15:10:50 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:28:22 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,12 @@ void	AForm::execute(Bureaucrat const &executor) const {
 		throw AForm::GradeTooLowException();
 	this->runForm();
 }
+
+// AForm	*AForm::makeForm(std::string formName, std::string formTarget) {
+// 	AForm *form = NULL;
+
+	
+// }
 
 std::ostream	&operator<<(std::ostream &out, const AForm &src) {
 	out << "AForm name: " << src.getName() << ".\n"

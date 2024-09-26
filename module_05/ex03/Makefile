@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/26 10:14:01 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/26 19:57:39 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= bureaucrat
+NAME 	= intern
 
 INC_DIR = inc/
 SRC_DIR = srcs/
@@ -20,6 +20,7 @@ INC		= $(INC_DIR)Bureaucrat.hpp \
 		  $(INC_DIR)AForm.hpp	\
 		  $(INC_DIR)ShrubberyCreationForm.hpp \
 		  $(INC_DIR)RobotomyRequestForm.hpp \
+		  $(INC_DIR)Intern.hpp \
 		  $(INC_DIR)PresidentialPardonForm.hpp
 
 SRC		= $(SRC_DIR)Bureaucrat.cpp \
@@ -27,6 +28,7 @@ SRC		= $(SRC_DIR)Bureaucrat.cpp \
 		  $(SRC_DIR)ShrubberyCreationForm.cpp \
 		  $(SRC_DIR)RobotomyRequestForm.cpp \
 		  $(SRC_DIR)PresidentialPardonForm.cpp \
+		  $(SRC_DIR)Intern.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)

@@ -61,6 +61,7 @@ class AForm {
 		void				execute(Bureaucrat const &executor) const;
 		virtual void		beSigned(const Bureaucrat src);
 		
+		//static AForm		*makeForm(std::string formName, std::string formTarget);
 		virtual void		runForm(void) const = 0;
 };
 

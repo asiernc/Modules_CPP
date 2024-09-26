@@ -6,11 +6,11 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/21 20:33:53 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/09/26 19:56:27 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= bureaucrat
+NAME 	= FormUpMaggots!
 
 INC_DIR = inc/
 SRC_DIR = srcs/
