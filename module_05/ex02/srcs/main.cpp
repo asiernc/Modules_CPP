@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 20:25:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/24 21:18:20 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:33:50 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 int main(void) {
 	Bureaucrat	zidane = Bureaucrat("Zidane", 40);
 	ShrubberyCreationForm test1 = ShrubberyCreationForm("hola");
-	//AForm	zidaneContract = AForm("Zidane contract", 135);
-
+	
 	//std::cout << zidaneContract << std::endl;
 	try
 	{

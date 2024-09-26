@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 20:20:03 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/24 21:02:08 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:32:18 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 		std::string			getTarget(void) const ;
 
-		virtual void	runForm(void) const;
+		virtual void		beSigned(const Bureaucrat src);
+		void				runForm(void) const;
 		
 };
 

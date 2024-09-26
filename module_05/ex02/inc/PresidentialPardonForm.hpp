@@ -36,7 +36,8 @@ class PresidentialPardonForm : public AForm {
 
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &src);
 		std::string				getTarget(void) const;
-		virtual void					runForm(void) const;
+		virtual void			runForm(void) const;
+		virtual void			beSigned(const Bureaucrat src);
 };
 
 #endif

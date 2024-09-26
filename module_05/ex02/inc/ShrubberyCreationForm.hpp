@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 20:34:52 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/24 21:14:32 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:42:02 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ class ShrubberyCreationForm : public AForm {
 
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &src);
 		std::string				getTarget(void) const;
-		// hacerla privada ?
+		// Para que shrubbery no sea considerada abstracta como AForm, debe
+		// heredar todas las funciones virtuales puras de AForm.
+		virtual void			beSigned(const Bureaucrat src);
 		virtual void			runForm(void) const;
 };
 
