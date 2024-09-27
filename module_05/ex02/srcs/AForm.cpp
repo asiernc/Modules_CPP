@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 21:50:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/26 12:13:03 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:57:38 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	AForm::beSigned(const Bureaucrat src) {
 }
 
 void	AForm::execute(Bureaucrat const &executor) const {
-	// if form is signed, and bureucrat have grade to exec, execute
 	if (this->getIfSigned() == false)
 		throw AForm::FormNotSigned();
 	if (executor.getGrade() > this->getGradeRequiredExec())

@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 20:34:52 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/26 11:34:03 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:52:51 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include "AForm.hpp"
 # include <fstream>
-
-// ShrubberyCreationForm: Required grades: sign 145, exec 137
-// Create a file <target>_shrubbery in the working directory,
-// and writes ASCII trees inside it.
 
 # undef SIGN_GRADE
 # define SIGN_GRADE 145

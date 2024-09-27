@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 20:25:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/26 14:48:01 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:51:49 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	test1(void) {
 	Bureaucrat	zidane = Bureaucrat("Zidane", 149);
 	ShrubberyCreationForm test1 = ShrubberyCreationForm("hola");
 	
+	std::cout << std::endl << test1 << std::endl;
 	try
 	{
 		test1.beSigned(zidane);
@@ -169,7 +170,6 @@ int main(void) {
 	std::cout << "Write 2 for run Robotomy Creation form SIGN & EXEC test" << std::endl;
 	std::cout << "Write 3 for run Shrubbery form SIGN & EXEC test" << std::endl;
 	std::cout << "Write 4 for run Presidential Pardon form SIGN & EXEC test" << std::endl;
-	std::cout << "Write 5 for custom test."<< std::endl;
 	if (std::getline(std::cin, str) && str != "") {
 		switch (str[0]) {
 			case '1':
@@ -184,9 +184,6 @@ int main(void) {
 			case '4':
 				test4();
 				break ;
-			// case '5':
-			// 	test5();
-			// 	break ;
 			default:
 				break ;
 		}

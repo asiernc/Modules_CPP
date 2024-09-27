@@ -16,10 +16,6 @@
 # include "AForm.hpp"
 # include <fstream>
 
-// PresidentialPardonForm: Required grades: sign 145, exec 137
-// Create a file <target>_shrubbery in the working directory,
-// and writes ASCII trees inside it.
-
 # undef SIGN_GRADE
 # define SIGN_GRADE 145
 # undef EXEC_GRADE

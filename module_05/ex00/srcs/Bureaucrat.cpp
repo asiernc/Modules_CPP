@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:32:02 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/21 20:30:50 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:47:39 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._gr
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &src) {
 	if (this != &src) {
 		// name is constant ==> doesn't change.
-		//this->_name = src.getName();
 		this->_grade = src.getGrade();
 	}
 	return (*this);
