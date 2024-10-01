@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/09/26 20:20:21 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/10/01 18:09:19 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,11 @@ INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)ScalarConverter.hpp 
+INC		= $(INC_DIR)ScalarConverter.hpp \
+		  $(INC_DIR)Converter.hpp
 
 SRC		= $(SRC_DIR)ScalarConverter.cpp \
+		  $(SRC_DIR)Converter.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
