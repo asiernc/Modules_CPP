@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:43:07 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/02 16:36:50 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/02 20:56:33 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <iostream>
-# include <stdexcept>
 # include <stdint.h>
 
 typedef struct Data {
 	std::string	name;
 	int			age;
-	//Data		*next;
 }				Data;
 
 class Serializer {
