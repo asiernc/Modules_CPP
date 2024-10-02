@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:27:48 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/09/06 19:10:39 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:08:29 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ DiamondTrap::DiamondTrap(std::string name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src)
-	: ClapTrap(src._name + "_clap_name"), ScavTrap(src._name + "_srav_name"), FragTrap(src._name + "_frag_name") {
+	: ClapTrap(src._name + "_clap_name"), ScavTrap(src._name + "_scrav_name"), FragTrap(src._name + "_frag_name") {
 	*this = src;
 }
 

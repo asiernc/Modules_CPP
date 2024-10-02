@@ -14,15 +14,20 @@
 
 # include <iostream>
 # include <stdexcept>
+# include <string>
 # include <cstdlib>
 # include "ScalarConverter.hpp"
 
+# define RESET   "\033[0m"
+# define RED     "\033[31m"
+# define YELLOW  "\033[33m"
+# define LIGHT_BLUE "\033[36m"
+# define GREEN   "\033[32m" 
+
+
 enum specialLiteral {
-	NaN = 1,
-	MINUS_INF,
-	MINUS_INFF,
-	PLUS_INF,
-	PLUS_INFF
+	MINUS_INF = 1,
+	PLUS_INF
 };
 
 enum type {
@@ -31,6 +36,7 @@ enum type {
 	FLOAT,
 	DOUBLE,
 	SPECIAL,
+	NaN,
 	NON_DISPL
 };
 
@@ -48,17 +54,17 @@ class Converter : public ScalarConverter {
 		int					_inputType;
 		int					_specialLiteral;
 		
+		// _ TO PRIVATE MEMBER FUNCTIONS
 		void			checkInput(std::string &input);
 		bool			isChar(std::string &str);
 		bool			isInt(std::string &str);
 		bool			isFloat(std::string &str);
 		bool			isDouble(std::string &str);
-		bool			isSpecialLiteral(std::string &str);
 		void			toChar(std::string &str);
 		void			toInt(std::string &str);
 		void			toFloat(std::string &str);
 		void			toDouble(std::string &str);
-		void			toSpecialLiteral(std::string &str);
+		void			displayPromptEspecial(void);
 		void			displayPrompt(void);
 		
 	public:
@@ -94,5 +100,3 @@ class Converter : public ScalarConverter {
 		virtual void	convert(void);
 };
 
-// char, int, float, double o un valor especial como nan o
-// inf antes de hacer las conversiones:

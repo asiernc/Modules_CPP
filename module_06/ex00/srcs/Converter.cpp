@@ -69,7 +69,7 @@ int			Converter::getSpecialLiteral(void) const { return this->_specialLiteral; }
 
 bool	Converter::isChar(std::string &ref) {
 	return (ref.length() == 1 ||
-		(ref.length() == 3 && (ref.front() == '\'' && ref.back() == '\'')));
+		(ref.length() == 3 && (ref[0] == '\'' && ref[2] == '\'')));
 }
 
 bool	Converter::isInt(std::string &str) {
@@ -101,20 +101,17 @@ bool	Converter::isDouble(std::string &str) {
 	return (false);
 }
 
+// back es de namespace, hacer una replica
+
 void	Converter::checkInput(std::string &str) {
-	if (!str.compare("nan") || !str.compare("nanf")) {
-		this->_inputType = SPECIAL;
-		this->_specialLiteral = NaN;
-	}
-	else if (!str.compare("+inf") || !str.compare("-inf") || !str.compare("+inff") || !str.compare("-inff")) {
+	if (!str.compare("nan") || !str.compare("nanf"))
+		this->_inputType = NaN;
+	else if (!str.compare("inf") || !str.compare("inff") || !str.compare("+inf") || !str.compare("-inf") || !str.compare("+inff") || !str.compare("-inff")) {
         this->_inputType = SPECIAL;
-		// to do MEJORAR y !!
-		// - Hacer un display para cada uno de los inf, entenderlo mejor si
-		// he de mostrar uno para cada uno o no, o hacer solo dos y compartidos.
-        if (str[0] == '+')
-            this->_specialLiteral = (str.back() == 'f') ? PLUS_INFF : PLUS_INF;
+        if (str[0] == '+' || str[0] == 'i')
+            this->_specialLiteral = PLUS_INF;
         else if (str[0] == '-')
-            this->_specialLiteral = (str.back() == 'f') ? MINUS_INFF : MINUS_INF;
+            this->_specialLiteral = MINUS_INF;
 	}
 	else {
 		if (isChar(str)) {
@@ -138,27 +135,43 @@ void	Converter::checkInput(std::string &str) {
 		throw notValidInput();
 }
 
+void	Converter::displayPromptEspecial(void) {
+	std::cout << LIGHT_BLUE << "Char: Non displayable." << std::endl;
+	std::cout << "Int: Non displayable." << std::endl;
+	(this->_input.find('+')) 
+		? std::cout << "Float: +inff\n" << "Double: +inf" << RESET << std::endl 
+		: std::cout << "Float: -inff\n" << "Double: -inf" << RESET <<std::endl;
+}
+
 void	Converter::displayPrompt(void) {
-	if (this->_char == NON_DISPL || this->_inputType == SPECIAL)
-		std::cout << "Char: " << "Non displayable" << std::endl;
+	if (this->_specialLiteral) {
+		displayPromptEspecial();
+		return ;
+	}
+	// Display CHAR
+	if (this->_char == NON_DISPL || this->_inputType == NaN)
+		std::cout << LIGHT_BLUE << "Char: " << "Non displayable." << std::endl;
 	else
-		std::cout << "Char: " << this->_char << std::endl;
-	std::cout << "Int: " << this->_int << std::endl;
+		std::cout << LIGHT_BLUE << "Char: '" << this->_char << '\'' << std::endl;
+	// Display INT
+	(this->_int == 0 && this->_inputType == NaN)
+		? std::cout << "Int: Non displayable" << std::endl
+		: std::cout << "Int: " << this->_int << std::endl;
+	// Display FLOAT
 	std::cout << "Float: " << this->_float;
-	if (this->_float == static_cast<int>(this->_float))
-		std::cout << ".0f" << std::endl;
-	else
-		std::cout << 'f' << std::endl;
+	(this->_float == static_cast<int>(this->_float))
+		? std::cout << ".0f" << std::endl
+		: std::cout << 'f' << std::endl;
+	// Display DOUBLE
 	std::cout << "Double: " << this->_double;
-	if (this->_double == static_cast<int>(this->_double))
-		std::cout << ".0" << std::endl;
-	else
-		std::cout << std::endl;
+	(this->_double == static_cast<int>(this->_double))
+		? std::cout << ".0" << RESET << std::endl
+		: std::cout << RESET << std::endl;
 }
 
 void	Converter::convert(void) {
 	checkInput(this->_input);
-	if (this->_specialLiteral) {
+	if (this->_specialLiteral || this->_inputType == NaN) {
 		displayPrompt();
 		return ;
 	}
@@ -209,22 +222,23 @@ void	Converter::toInt(std::string &num) {
 
 void	Converter::toFloat(std::string &num) {
 	this->_float = atof(num.c_str());
-	if (this->_float >= 32 && this->_float <= 126) // isprintable()
-		this->_char = this->_float;
+	this->_int = static_cast<int>(this->_float);
+	std::cout << RED << "INT ==> " << this->_int << RESET << std::endl;
+	if (this->_int >= 32 && this->_int <= 126.0) // isprintable()
+		this->_char = this->_int;
 	else
 		this->_char = NON_DISPL;
-	this->_int = static_cast<int>(this->_float);
 	this->_double = static_cast<double>(this->_float);
 	displayPrompt();
 }
 
 void	Converter::toDouble(std::string &num) {
 	this->_double = atof(num.c_str());
-	if (this->_double >= 32 && this->_double <= 126) // isprintable()
-		this->_char = this->_float;
+	this->_int = static_cast<int>(this->_double);
+	if (this->_int >= 32 && this->_int <= 126) // isprintable()
+		this->_char = this->_int;
 	else
 		this->_char = NON_DISPL;
-	this->_int = static_cast<int>(this->_double);
 	this->_float = static_cast<float>(this->_double);
 	displayPrompt();
 }
