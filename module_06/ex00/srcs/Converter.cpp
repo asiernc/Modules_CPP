@@ -73,39 +73,59 @@ bool	Converter::isChar(std::string &ref) {
 }
 
 bool	Converter::isInt(std::string &str) {
-	if (str.empty())
-		return (false);
+	// if (str.empty())
+	// 	return (false);
 
-	size_t	i = 0;
-	if (str[0] == '+' || str[0] == '-') {
-		if (str.length() == 1)
-			return (false);
-		i = 1;
-	}
-	for (; i < str.length(); i++) {
-		if (str[i] < '0' || str[i] >'9')
-			return (false);
-	}
-	return (true);
+	// size_t	i = 0;
+	// if (str[0] == '+' || str[0] == '-') {
+	// 	if (str.length() == 1)
+	// 		return (false);
+	// 	i = 1;
+	// }
+	// for (; i < str.length(); i++) {
+	// 	if (str[i] < '0' || str[i] >'9')
+	// 		return (false);
+	// }
+	// return (true);
+	char* end;
+    long value = std::strtol(str.c_str(), &end, 10);
+
+    if (*end == '\0' && value >= -2147483648 && value <= 2147483647) {
+        return true;
+    }
+    return false;
 }
 
 bool	Converter::isFloat(std::string &str) {
-	if (str.find('.') != std::string::npos && str[str.length() - 1] == 'f')
-		return (true);
-	return (false);
+	//if (str.find('.') != std::string::npos && str[str.length() - 1] == 'f')
+	//	return (true);
+	//return (false);
+	if (str.find('.') == std::string::npos || str[str.length() - 1] != 'f')
+        return false;
+
+    char* end;
+    float value = std::strtof(str.c_str(), &end);  // Convierte la cadena a float
+
+    if (*end == 'f' && *(end + 1) == '\0' && value >= -3.402823466e+38 && value <= 1.175494351e-38) {
+        return true;
+    }
+    return false;
 }
 
 bool	Converter::isDouble(std::string &str) {
-	if (str.find('.') != std::string::npos && str[str.length() - 1] != 'f')
-		return (true);
-	return (false);
-}
+	char* end;
+    double value = std::strtod(str.c_str(), &end);
 
-// back es de namespace, hacer una replica
+    if (*end == '\0' && (str.find('.') != std::string::npos || value > 2147483647 || value < -2147483648)) {
+        return true;
+    }
+    return false;
+}
 
 void	Converter::checkInput(std::string &str) {
 	if (!str.compare("nan") || !str.compare("nanf"))
 		this->_inputType = NaN;
+	// strnstr big needle
 	else if (!str.compare("inf") || !str.compare("inff") || !str.compare("+inf") || !str.compare("-inf") || !str.compare("+inff") || !str.compare("-inff")) {
         this->_inputType = SPECIAL;
         if (str[0] == '+' || str[0] == 'i')
