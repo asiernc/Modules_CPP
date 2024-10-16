@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:41:59 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/08 21:45:46 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:35:47 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Span::Span(void) : _maxSize(0) {
 }
 
 Span::Span(unsigned int size) : _maxSize(size) {
-	
+	std::cout << "Span is created with size " << size << std::endl;
 }
 
 Span::Span(const Span &src) : _maxSize(src._maxSize) {
@@ -33,11 +33,6 @@ Span	&Span::operator=(const Span &src) {
 Span::~Span(void) {
 	
 }
-
-
-// This class will have a member function called addNumber() to add a single number to the Span.
-// It will be used in order to fill it. Any attempt to add a new element if there are already
-// N elements stored should throw an exception.
 
 void	Span::addNumber(unsigned int num) {
 	if (this->_container.size() == this->_maxSize)
@@ -77,19 +72,28 @@ unsigned int	Span::longestSpan(void) {
 
 void	Span::fillRandom(unsigned int size) {
 	if (size == 0)
-		throw moreThanOne();
-	if (size < this->_maxSize)
-		throw sizeMax();
-	if (this->_container.empty())
-		this->_container.clear();
+        throw moreThanOne();
+    // Verificar si el nuevo tamaño excede la capacidad
+    if (this->_container.size() + size > this->_maxSize)
+        throw sizeMax();
 	srand(time(NULL));
 	for (unsigned int i = 0; i < size; i++)
 		this->addNumber(static_cast<unsigned int>(rand()));
 }
 
 void	Span::showArray(void) {
-	std::vector<unsigned int>::iterator it = this->_container.begin();
-	for (; it != this->_container.end(); it++)
-		std::cout << *it << " - ";
-	std::cout << std::endl;
+	if (this->_container.size() > 0) {
+		std::vector<unsigned int>::iterator it = this->_container.begin();
+		for (; it != this->_container.end(); it++) {
+			if (*(it + 1))
+				std::cout << *it << " - ";
+			else
+				std::cout << *it << std::endl;
+		}
+	}
+}
+
+void	Span::cleanVector(void) {
+	if (this->_container.empty())
+		this->_container.clear();
 }

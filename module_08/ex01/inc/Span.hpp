@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:04:21 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/08 21:43:35 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:07:06 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 # include <algorithm>
 # include <vector>
 
+
 class Span {
 	private:
 		std::vector<unsigned int>	_container;
-		unsigned int		_maxSize;
+		unsigned int				_maxSize;
 
 	public:
 		Span(void);
@@ -29,10 +30,26 @@ class Span {
 		Span &operator=(const Span &src);
 		~Span(void);
 
+
+		void			addNumber(unsigned int num);
+		unsigned int	shortestSpan(void);
+		unsigned int	longestSpan(void);
+		void			fillRandom(unsigned int size);
+		void			cleanVector(void);
+		void			showArray(void);
+
+		template<typename Iterator>
+		void	addRange(Iterator begin, Iterator end) {
+			if (std::distance(begin, end) + this->_container.size() > this->_maxSize)
+				throw sizeMax();
+			for (Iterator it = begin; it != end; it++)
+				this->addNumber(*it);
+		}
+		
 		class maxReached : public std::exception {
 			public:
 				virtual const char *what(void) const throw() {
-					return ("Max of size vector is limit.");
+					return ("Reached max of vector size.");
 				}
 		};
 
@@ -63,20 +80,5 @@ class Span {
 					return ("You cannot fill the container with more than the size of this. :\\");
 				}
 		};
-
-		void			addNumber(unsigned int num);
-		unsigned int	shortestSpan(void);
-		unsigned int	longestSpan(void);
-		void			fillRandom(unsigned int size);
-
-		// Last but not least, it would be wonderful to fill your Span using a 
-		// range of iterators. Making thousands calls to addNumber() is so
-		// annoying. Implement a member function to add many numbers to your
-		// Span in one call.
-
-		
-
-		void			showArray(void);
-
 };
 
