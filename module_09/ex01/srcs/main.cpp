@@ -6,30 +6,25 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:22:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 17:19:12 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:39:26 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
-#include "Utils.hpp"
-
+#include "RPN.hpp"
 
 int main(int argc, char **argv) {
-	if (argc < 2 || argc > 3) {
-		std::cerr << "Please use: ./btc filepath(toConvert)\n\tOPTIONAL 3rd argv: filepath(database)" << std::endl;
-		return (1);
-	}
-	std::string	dbPath = "inputs/data.csv";
-	if (argv[2])
-		dbPath = argv[2];
-	BitcoinExchange btcDB = BitcoinExchange(dbPath);
+	if (argc != 2)
+		std::cerr << "Please use ./RPN \"inverted Polish mathematical expression\"" << std::endl;
+	std::string	expr = argv[1];
+	RPN	rpn(expr.c_str());
 	try {
-		btcDB.createDB();
+		rpn.handleInput();
+		rpn.calculate();
 	}
 	catch (std::exception &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		return (1);
 	}
-	std::string	inputFilePath = argv[1];
-	extractInput(btcDB, inputFilePath.c_str());
+	
+	return (0);
 }

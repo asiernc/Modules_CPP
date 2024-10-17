@@ -6,7 +6,7 @@
 #    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/10/16 17:15:56 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/10/16 17:20:39 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,9 @@ INC_DIR = inc/
 SRC_DIR = srcs/
 OBJ_DIR = objs/
 
-INC		= $(INC_DIR)BitcoinExchange.hpp \
-		  $(INC_DIR)Utils.hpp
+INC		= $(INC_DIR)RPN.hpp \
 
-SRC		= $(SRC_DIR)BitcoinExchange.cpp \
-		  $(SRC_DIR)Utils.cpp \
+SRC		= $(SRC_DIR)RPN.cpp \
 		  $(SRC_DIR)main.cpp
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
