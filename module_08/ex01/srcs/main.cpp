@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:03:25 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/15 11:57:00 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 12:25:54 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,12 @@ int main( void ) {
 	catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << std::endl << "Cleaning vector for another test...\n" << std::endl;
-	test7.cleanVector();
+	Span test8(5);
 	try {
 		std::cout << "First fill vector with one number..." << std::endl;
 		std::cout << "Later fill size 5 vector." << std::endl;
-		test7.addNumber(1);
-		test7.addRange(numbers.begin(), numbers.end());
+		test8.addNumber(1);
+		test8.addRange(numbers.begin(), numbers.end());
 	}
 	catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;

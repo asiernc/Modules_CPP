@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 17:10:08 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:35:35 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ std::map<std::string, float>	BitcoinExchange::getDB(void) {
 }
 
 void	BitcoinExchange::createDB(void) {
-	std::ifstream	file(this->_dbPath);
+	std::ifstream	file(this->_dbPath.c_str());
     std::string		line;
 
-    if (!file.is_open())
-        throw openError();
+	if (!file.is_open())
+		throw openError();
 	this->_db.clear();
-    while (std::getline(file, line)) {
+	while (std::getline(file, line)) {
         std::stringstream ss(line);
         std::string date;
         std::string valueStr;

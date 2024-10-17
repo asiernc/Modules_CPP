@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 18:43:28 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 17:14:59 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:37:52 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ static bool	checkDate(std::string str) {
 		return (false);
 	}
 	try {
-		year = std::stoi(str.substr(0, 4));
-		month = std::stoi(str.substr(5, 2));
-		day = std::stoi(str.substr(8, 2));
+		year = std::atoi(str.substr(0, 4).c_str());
+		month = std::atoi(str.substr(5, 2).c_str());
+		day = std::atoi(str.substr(8, 2).c_str());
 	}
 	catch (const std::invalid_argument &e) {
 		sendError(WRONG_DATE, str);
@@ -95,7 +95,7 @@ static bool	checkValue(float value) {
 
 void	extractInput(BitcoinExchange btcDB, std::string inputPath) {
 	std::map<std::string, float>	parsed;
-	std::ifstream					file(inputPath);
+	std::ifstream					file(inputPath.c_str());
 	std::string						line;
 
 	if (!file.is_open())

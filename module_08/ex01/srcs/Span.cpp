@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:41:59 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/15 11:35:47 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/17 12:37:37 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ void	Span::fillRandom(unsigned int size) {
 	if (size == 0)
         throw moreThanOne();
     // Verificar si el nuevo tamaño excede la capacidad
-    if (this->_container.size() + size > this->_maxSize)
-        throw sizeMax();
+	if ((this->_container.size() + size) > this->_maxSize)
+		throw sizeMax();
 	srand(time(NULL));
 	for (unsigned int i = 0; i < size; i++)
 		this->addNumber(static_cast<unsigned int>(rand()));
@@ -84,11 +84,13 @@ void	Span::fillRandom(unsigned int size) {
 void	Span::showArray(void) {
 	if (this->_container.size() > 0) {
 		std::vector<unsigned int>::iterator it = this->_container.begin();
-		for (; it != this->_container.end(); it++) {
-			if (*(it + 1))
+		while (it != this->_container.end()) {
+			std::cout << *it;
+			if (it + 1 != this->_container.end())
 				std::cout << *it << " - ";
 			else
 				std::cout << *it << std::endl;
+			it++;
 		}
 	}
 }
