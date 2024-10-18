@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 19:00:17 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:30:54 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,46 +61,47 @@ void RPN::handleInput(void) {
     }
 }
 
-si tengo un numero, buscar automaticamente el siguiente operador, y eliminarlo
-
-
 void	RPN::calculate(void) {
 	if (this->_parsed.size() < 3) {
 		throw badExpression();
 		return ;
 	}
 	std::list<int>::iterator it = this->_parsed.begin();
-	int accum = *it;
-	++it;
-	for (; it != this->_parsed.end(); ++it) {
-        int currentValue = *it;
-        ++it;
-        char operatorChar = static_cast<char>(*it);
-        if (it == this->_parsed.end()) {
-            throw badExpression(); // operand after operator
-        }
-        //std::cout << "CURRENT " << currentValue << "   OPERATOR " << operatorChar << std::endl; 
-
-        switch (operatorChar) {
-            case '+':
-                accum += currentValue;
-                break;
-            case '-':
-                accum -= currentValue;
-                break;
-            case '*':
-                accum *= currentValue;
-                break;
-            case '/':
-                //if (currentValue == 0) {
-                //    throw badExpression();
-                //}
-                accum /= currentValue;
-                break;
-            default:
-                throw badExpression();
-        }
-    }
-    std::cout << "Result: " << accum << std::endl;
+	std::stack<int> opeStack;
+	while (it != this->_parsed.end()) {
+		if (*it > 10) {
+			if (opeStack.size() < 2)
+				throw badExpression();
+			int right = opeStack.top();
+			opeStack.pop();
+			int left = opeStack.top();
+			opeStack.pop();
+			char operatorChar = static_cast<char>(*it);
+			switch (operatorChar) {
+				case '+':
+					opeStack.push(left + right);
+					break ;
+				case '-':
+					opeStack.push(left - right);
+					break ;
+				case '*':
+					opeStack.push(left * right);
+					break ;
+				case '/':
+					if (right == 0)
+						throw badExpression();
+                    opeStack.push(left / right);
+                    break;
+				default:
+					throw badExpression();
+			}
+		}
+		else
+			opeStack.push(*it);
+		++it;
+	}
+	if (opeStack.size() != 1)
+		throw badExpression();
+    std::cout << "Result: " << opeStack.top() << std::endl;
 }
 

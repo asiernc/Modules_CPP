@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 17:20:47 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 18:39:45 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:16:44 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <list>
+#include <stack>
 #include <stdbool.h>
 
 
@@ -28,6 +29,9 @@ class RPN {
 		std::list<int>	_parsed;
 		static bool validChars(char c) {
 			return (c == '+' || c == '-' || c == '*' || c == '/' || c == ' ' || (c >= '0' && c <= '9'));
+		}
+		static bool	isOperator(int value) {
+			return (value > 10);
 		}
 
 	public:

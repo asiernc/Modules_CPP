@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/17 15:35:35 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/18 10:05:22 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ void	BitcoinExchange::createDB(void) {
             valueStr.erase(0, valueStr.find_first_not_of(" \n\r\t"));
 
             std::stringstream valueStream(valueStr);
-            valueStream >> value;
-			
-            this->_db[date] = value;
+			if (valueStream >> value) this->_db[date] = value;
         }
     }
 	file.close();
@@ -76,9 +74,7 @@ float	BitcoinExchange::getRate(std::string date, float value) {
 	std::map<std::string, float>::iterator it = this->_db.find(date);
 
 	// fecha exacta
-    if (it != this->_db.end()) {
-        return (value * it->second);
-    }
+    if (it != this->_db.end())return (value * it->second);
 
     // Si no se encuentra la fecha exacta, buscamos la más cercana
     it = this->_db.lower_bound(date);
@@ -94,9 +90,7 @@ float	BitcoinExchange::getRate(std::string date, float value) {
 
     // Si lower_bound devolvió un iterador válido pero no es la fecha exacta, 
     // retrocedemos al iterador anterior (la fecha más cercana anterior)
-    if (it != this->_db.begin()) {
-        --it;
-    }
+    if (it != this->_db.begin()) --it;
     return (value * it->second);
 }
 

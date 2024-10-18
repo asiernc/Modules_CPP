@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 16:22:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/18 12:27:34 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/10/18 12:34:30 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Please use ./RPN \"inverted Polish mathematical expression\"" << std::endl;
-		return (1);
-	}
-	std::string	expr = argv[1];
-	RPN	rpn(expr.c_str());
-	try {
-		rpn.handleInput();
-		rpn.calculate();
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
+PmergeMe::PmergeMe(void) {
 	
-	return (0);
+}
+
+PmergeMe::PmergeMe(std::string expression) {
+	
+}
+
+PmergeMe::PmergeMe(const PmergeMe &src)  {
+	*this = src;
+}
+
+PmergeMe	&PmergeMe::operator=(const PmergeMe &src) {
+	if (this != &src)
+		*this = src;
+	return (*this);
+}
+
+PmergeMe::~PmergeMe(void) {
+	
 }
 

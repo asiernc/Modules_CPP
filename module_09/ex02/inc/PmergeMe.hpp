@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 16:22:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/18 12:27:34 by anovio-c         ###   ########.fr       */
+/*   Created: 2024/10/16 17:20:47 by anovio-c          #+#    #+#             */
+/*   Updated: 2024/10/18 12:34:03 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#pragma once
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Please use ./RPN \"inverted Polish mathematical expression\"" << std::endl;
-		return (1);
-	}
-	std::string	expr = argv[1];
-	RPN	rpn(expr.c_str());
-	try {
-		rpn.handleInput();
-		rpn.calculate();
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	
-	return (0);
-}
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
+#include <algorithm>
+#include <vector>
+#include <deque>
+#include <stdbool.h>
 
+
+
+class PmergeMe {
+	private:
+
+	public:
+		PmergeMe(void);
+		PmergeMe(std::string algo);
+		PmergeMe(const PmergeMe &src);
+		PmergeMe	&operator=(const PmergeMe &src);
+		~PmergeMe(void);
+};
