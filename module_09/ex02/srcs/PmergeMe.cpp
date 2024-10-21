@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/21 13:49:18 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:34:24 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(void) : _input(""), _sizeInput(0) {
+PmergeMe::PmergeMe(void) : _input("") {
 	
 }
 
 PmergeMe::PmergeMe(const std::string &expression)
-	: _input(expression), _sizeInput(0) {
+	: _input(expression) {
 	
 }
 
@@ -32,14 +32,47 @@ PmergeMe	&PmergeMe::operator=(const PmergeMe &src) {
 }
 
 PmergeMe::~PmergeMe(void) {
-	std::cout << "AFTER " << std::endl;
-	std::deque<unsigned int>::iterator it = _parsed.begin();
-	it = _parsed.begin();
-	for (; it != _parsed.end(); ++it)
-		std::cout << *it << " ";
-	std::cout << std::endl;
-	// if (this->_parsed)
-	// 	delete [] this->_parsed;
+	
+}
+
+void	PmergeMe::printTime(timeval start, timeval end, int flag) {
+	long seconds = end.tv_sec - start.tv_sec;
+    long microseconds = end.tv_usec - start.tv_usec;
+    long totalMicroseconds = seconds * 1000000 + microseconds;
+	std::cout << "Time to process a range of " << this->_sizeInput << " elements with std::";
+	if (flag == 0)
+		std::cout << "deque : ";
+	else
+		std::cout << "vector : ";
+	std::cout << totalMicroseconds << " us"  << std::endl;
+}
+
+void	PmergeMe::runSortDeque(void) {
+	struct timeval start, end;
+	
+	handleInputDeque();
+	std::cout << "Before : \t";
+	printDeque();
+	gettimeofday(&start, NULL);
+	fordJohnsonSortDeque(this->_parsedDeque);
+	gettimeofday(&end, NULL);
+	std::cout << "After : \t";
+	printDeque();
+	printTime(start, end, 0);
+}
+
+void	PmergeMe::runSortVector(void) {
+	struct timeval start, end;
+	
+	handleInputVector();
+	std::cout << "Before : \t";
+	printVector();
+	gettimeofday(&start, NULL);
+	fordJohnsonSortVector(this->_parsedVector);
+	gettimeofday(&end, NULL);
+	std::cout << "After : \t";
+	printVector();
+	printTime(start, end, 1);
 }
 
 bool	PmergeMe::isValidUint(const std::string &str) {
@@ -66,14 +99,11 @@ int	PmergeMe::handleInputDeque(void) {
 
 	std::stringstream	ss(this->_input);
 	std::string			token;
-	//std::deque<unsigned int>	parsed;
 
 	while (ss >> token) {
 		if (isValidUint(token)) {
 			try {
-				//int num = strToInt(token);
-				//std::cout << "NUMMMM    " << num << std::endl;
-				this->_parsed.push_back(strToUint(token));
+				this->_parsedDeque.push_back(strToUint(token));
 			}
 			catch (std::exception &e) {
 				std::cerr << e.what() << std::endl;
@@ -84,31 +114,30 @@ int	PmergeMe::handleInputDeque(void) {
 			return (1);
 		}
 	}
-	this->_sizeInput = this->_parsed.size();
+	this->_sizeInput = this->_parsedDeque.size();
+	return (0);
+}
 
-	std::cout << "BEFORE " << std::endl;
-	std::deque<unsigned int>::iterator it = _parsed.begin();
-	for (; it != _parsed.end(); ++it)
-		std::cout << *it << " ";
-	std::cout << std::endl;
-	
-	fordJohnsonSortDeque(this->_parsed);
-	
+int	PmergeMe::handleInputVector(void) {
 
-	// Filling array ??
-	// this->_arr = new unsigned int[this->_sizeInput];
-	// std::deque<unsigned int>::iterator it2 = this->_parsed.begin();
-	// for (size_t i = 0; i < this->_sizeInput; i++) {
-	// 	this->_arr[i] = *it2;
-	// 	it2++;
-	// }
+	std::stringstream	ss(this->_input);
+	std::string			token;
 
-	// // TEST
-	// // TEST
-	// for (size_t i = 0; i < this->_sizeInput; i++)
-	// 	std::cout << "NUM ARRAY = " << this->_parsed[i] << std::endl;
-	// // TEST
-	
+	while (ss >> token) {
+		if (isValidUint(token)) {
+			try {
+				this->_parsedVector.push_back(strToUint(token));
+			}
+			catch (std::exception &e) {
+				std::cerr << e.what() << std::endl;
+			}
+		}
+		else {
+			std::cerr << "Invalid input = " << token << std::endl;
+			return (1);
+		}
+	}
+	this->_sizeInput = this->_parsedVector.size();
 	return (0);
 }
 
@@ -122,7 +151,7 @@ void	PmergeMe::fordJohnsonSortDeque(std::deque<unsigned int> &deque) {
 		leftDeque.push_back(deque.front());
 		deque.pop_front();
 	}
-	while (!this->_parsed.empty()) {
+	while (!deque.empty()) {
 		rightDeque.push_back(deque.front());
 		deque.pop_front();
 	}
@@ -131,6 +160,7 @@ void	PmergeMe::fordJohnsonSortDeque(std::deque<unsigned int> &deque) {
 
 	mergeDeque(deque, leftDeque, rightDeque);
 	
+	// not very improtant
 	while (!rightDeque.empty()) {
         insertDeque(deque, deque.size(), rightDeque.front());
         rightDeque.pop_front();
@@ -138,7 +168,8 @@ void	PmergeMe::fordJohnsonSortDeque(std::deque<unsigned int> &deque) {
 }
 
 void	PmergeMe::mergeDeque(std::deque<unsigned int> &mergeDeque,
-	std::deque<unsigned int> &leftDeque, std::deque<unsigned int> &rightDeque) {
+							 std::deque<unsigned int> &leftDeque,
+							 std::deque<unsigned int> &rightDeque) {
 	
 	while (!leftDeque.empty() && !rightDeque.empty()) {
 		if (leftDeque.front() <= rightDeque.front()) {
@@ -161,13 +192,11 @@ void	PmergeMe::mergeDeque(std::deque<unsigned int> &mergeDeque,
 }
 
 void	PmergeMe::insertDeque(std::deque<unsigned int> &deque, int size, unsigned int key) {
-	
 	std::deque<unsigned int> tmp;
 
 	while (size > 0 && deque.back() > key) {
 		tmp.push_back(deque.back());
 		deque.pop_back();
-		//size--;
 	}
 	deque.push_back(key);
 	while (!tmp.empty()) {
@@ -176,3 +205,81 @@ void	PmergeMe::insertDeque(std::deque<unsigned int> &deque, int size, unsigned i
 	}
 }
 
+void	PmergeMe::fordJohnsonSortVector(std::vector<unsigned int> &vector) {
+	if (vector.size() <= 1)
+		return ;
+	std::vector<unsigned int> leftVector, rightVector;
+
+	int mid = vector.size() / 2;
+	for (int i = 0; i < mid; i++) {
+		leftVector.push_back(vector.front());
+		vector.erase(vector.begin());
+	}
+	while (!vector.empty()) {
+		rightVector.push_back(vector.front());
+		vector.erase(vector.begin());
+	}
+	fordJohnsonSortVector(leftVector);
+	fordJohnsonSortVector(rightVector);
+
+	mergeVector(vector, leftVector, rightVector);
+	
+	// not very improtant
+	while (!rightVector.empty()) {
+        insertVector(vector, vector.size(), rightVector.front());
+		rightVector.erase(rightVector.begin());
+    }
+}
+
+void	PmergeMe::mergeVector(std::vector<unsigned int> &mergeVector,
+							 std::vector<unsigned int> &leftVector,
+							 std::vector<unsigned int> &rightVector) {
+	
+	while (!leftVector.empty() && !rightVector.empty()) {
+		if (leftVector.front() <= rightVector.front()) {
+			mergeVector.push_back(leftVector.front());
+			leftVector.erase(leftVector.begin());
+		}
+		else {
+			mergeVector.push_back(rightVector.front());
+			rightVector.erase(rightVector.begin());
+
+		}
+	}
+	while (!leftVector.empty()) {
+		mergeVector.push_back(leftVector.front());
+		leftVector.erase(leftVector.begin());
+	}
+	while (!rightVector.empty()) {
+		mergeVector.push_back(rightVector.front());
+		rightVector.erase(rightVector.begin());
+	}
+}
+
+void	PmergeMe::insertVector(std::vector<unsigned int> &vector, int size, unsigned int key) {
+	std::vector<unsigned int> tmp;
+
+	while (size > 0 && vector.back() > key) {
+		tmp.push_back(vector.back());
+		vector.pop_back();
+	}
+	vector.push_back(key);
+	while (!tmp.empty()) {
+		vector.push_back(tmp.front());
+		tmp.erase(tmp.begin());
+	}
+}
+
+void	PmergeMe::printDeque(void) {
+	std::deque<unsigned int>::iterator it = this->_parsedDeque.begin();
+	for (; it != this->_parsedDeque.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
+
+void	PmergeMe::printVector(void) {
+	std::vector<unsigned int>::iterator it = this->_parsedVector.begin();
+	for (; it != this->_parsedVector.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}

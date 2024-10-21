@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:22:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/21 13:30:05 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:33:42 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int main(int argc, char **argv) {
 	}
 	std::string	input = argv[1];
 	PmergeMe one = PmergeMe(input.c_str());
-	one.handleInputDeque();
+	std::cout << "DEQUE CONTAINER ==> " << std::endl;
+	one.runSortDeque();
+	std::cout << "VECTOR CONTAINER ==> " << std::endl;
+	one.runSortVector();
 	return (0);
 }
 

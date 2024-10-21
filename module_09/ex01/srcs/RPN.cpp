@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/18 12:30:54 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:15:09 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,48 @@ RPN::~RPN(void) {
 	
 }
 
+int	RPN::strToInt(const std::string &ref) {
+	std::stringstream	ss(ref);
+	int					num = 0;
+	ss >> num;
+	if (ss.fail() || !ss.eof())
+		throw std::invalid_argument("Invalid integer: " + ref);
+	return (num);
+}
+
 void RPN::handleInput(void) {
-    int flagSpace = 1;
-    std::string numberStr;
+    // int flagSpace = 1;
+    // std::string numberStr;
 
-    for (size_t i = 0; i < this->_expression.size(); i++) {
-        char currentChar = this->_expression[i];
+    // for (size_t i = 0; i < this->_expression.size(); i++) {
+    //     char currentChar = this->_expression[i];
 
-        if (validChars(currentChar)) {
-            if (currentChar >= '0' && currentChar <= '9') {
-                if (flagSpace == 0)
-					throw badExpression();
-				_parsed.push_back(currentChar - '0');
-				flagSpace = 0;
-            } 
-            else if (currentChar == ' ')
-                flagSpace = 1;
-            else {
-                if (flagSpace == 0)
-					flagSpace = 1;
-                _parsed.push_back(static_cast<int>(currentChar));
-            }
-        } else {
-            throw badExpression();
-        }
-    }
+    //     if (validChars(currentChar)) {
+    //         if (currentChar >= '0' && currentChar <= '9') {
+    //             if (flagSpace == 0)
+	// 				throw badExpression();
+	// 			_parsed.push_back(currentChar - '0');
+	// 			flagSpace = 0;
+    //         } 
+    //         else if (currentChar == ' ')
+    //             flagSpace = 1;
+    //         else {
+    //             if (flagSpace == 0)
+	// 				flagSpace = 1;
+    //             _parsed.push_back(static_cast<int>(currentChar));
+    //         }
+    //     } else {
+    //         throw badExpression();
+    //     }
+    // }
+	std::stringstream ss(this->_expression);
+	std::string		token;
+	while (ss >> token) {
+		if (token.size() == 1 && isOperator(token[0]))
+			this->_parsed.push_back(static_cast<int>(token[0]));
+		else
+			this->_parsed.push_back(strToInt(token));
+	}
 }
 
 void	RPN::calculate(void) {
