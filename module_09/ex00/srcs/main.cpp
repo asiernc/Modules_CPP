@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:22:24 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/16 17:19:12 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:30:47 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,13 @@ int main(int argc, char **argv) {
 		return (1);
 	}
 	std::string	inputFilePath = argv[1];
-	extractInput(btcDB, inputFilePath.c_str());
+	try {
+		extractInput(btcDB, inputFilePath.c_str());
+	}
+	catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+		return (1);
+	}
+	return (0);
 }
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:27:11 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/21 16:34:24 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:09:48 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,13 @@ void	PmergeMe::printTime(timeval start, timeval end, int flag) {
 void	PmergeMe::runSortDeque(void) {
 	struct timeval start, end;
 	
-	handleInputDeque();
+	try {
+		handleInputDeque();
+	}
+	catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+		return ;
+	}
 	std::cout << "Before : \t";
 	printDeque();
 	gettimeofday(&start, NULL);
@@ -64,7 +70,13 @@ void	PmergeMe::runSortDeque(void) {
 void	PmergeMe::runSortVector(void) {
 	struct timeval start, end;
 	
-	handleInputVector();
+	try {
+		handleInputVector();
+	}
+	catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+		return ;
+	}
 	std::cout << "Before : \t";
 	printVector();
 	gettimeofday(&start, NULL);
@@ -159,8 +171,7 @@ void	PmergeMe::fordJohnsonSortDeque(std::deque<unsigned int> &deque) {
 	fordJohnsonSortDeque(rightDeque);
 
 	mergeDeque(deque, leftDeque, rightDeque);
-	
-	// not very improtant
+
 	while (!rightDeque.empty()) {
         insertDeque(deque, deque.size(), rightDeque.front());
         rightDeque.pop_front();
@@ -224,7 +235,6 @@ void	PmergeMe::fordJohnsonSortVector(std::vector<unsigned int> &vector) {
 
 	mergeVector(vector, leftVector, rightVector);
 	
-	// not very improtant
 	while (!rightVector.empty()) {
         insertVector(vector, vector.size(), rightVector.front());
 		rightVector.erase(rightVector.begin());
@@ -243,7 +253,6 @@ void	PmergeMe::mergeVector(std::vector<unsigned int> &mergeVector,
 		else {
 			mergeVector.push_back(rightVector.front());
 			rightVector.erase(rightVector.begin());
-
 		}
 	}
 	while (!leftVector.empty()) {

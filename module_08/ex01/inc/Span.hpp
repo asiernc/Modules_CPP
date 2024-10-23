@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:04:21 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/17 11:55:15 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/22 12:13:48 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Span {
 				throw sizeMax();
 			for (Iterator it = begin; it != end; it++)
 				this->addNumber(*it);
+			// std::insert
 		}
 		
 		class maxReached : public std::exception {
