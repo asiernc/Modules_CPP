@@ -6,7 +6,7 @@
 /*   By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 17:20:47 by anovio-c          #+#    #+#             */
-/*   Updated: 2024/10/21 17:12:03 by anovio-c         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:21:17 by anovio-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 #include <list>
 #include <stack>
 #include <stdbool.h>
-
-
 
 class RPN {
 	private:

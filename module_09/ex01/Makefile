@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anovio-c <anovio-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: anovio-c <anovio-c@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 20:37:28 by anovio-c          #+#    #+#              #
-#    Updated: 2024/10/18 10:08:57 by anovio-c         ###   ########.fr        #
+#    Updated: 2024/11/25 11:02:11 by anovio-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC		= $(SRC_DIR)RPN.cpp \
 
 OBJ = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP
 
 # Colored output
